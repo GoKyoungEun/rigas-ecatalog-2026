@@ -1,5 +1,5 @@
 import { CatalogPage } from "catalog/CatalogPage";
-import { Anime } from "components/elements";
+import { Anime, Image } from "components/elements";
 import GlobeNetwork from "components/GlobeNetwork";
 
 const pageInfo = {
@@ -7,26 +7,69 @@ const pageInfo = {
   depth2: "global-network",
 };
 
+const clientGroups = [
+  {
+    title: "Major Enterprises",
+    items: [
+      { img: "company/logo-hyundai.png", alt: "Hyundai" },
+      { img: "company/logo-samsung.png", alt: "Samsung" },
+      { img: "company/logo-posco.png", alt: "Posco" },
+    ],
+  },
+  {
+    title: "Global Corporation",
+    items: [
+      { img: "company/logo-nipponsanso.png", alt: "Nippon Sanso" },
+      { img: "company/logo-honeywell.png", alt: "Honeywell Technologies" },
+      { img: "company/logo-linde.png", alt: "Linde" },
+    ],
+  },
+  {
+    title: "Public Institutions",
+    items: [
+      { img: "company/logo-ktl.png", alt: "Korea Testing Laboratory" },
+      { img: "company/logo-keco.png", alt: "K-eco" },
+      { img: "company/logo-kepco.png", alt: "Kepco" },
+    ],
+  },
+];
+
 export default function CompanyGlobalNetwork() {
   return (
     <CatalogPage pageInfo={pageInfo} className="page-wrapper global-network">
       <div className="wrap">
-        <div className="global-network-head">
-          <Anime anime="fadeUp" delay={0.15} className="global-network-title">
-            <p className="global-network-cate">COMPANY</p>
-            <h2 className="global-network-sbj">Global Network</h2>
+        <div className="page-head">
+          <Anime anime="fadeUp" delay={0.15} className="page-head-title">
+            <p className="page-head-cate">COMPANY</p>
+            <h2 className="page-head-sbj">Global Network</h2>
           </Anime>
-          <Anime anime="fadeUp" delay={0.35} className="global-network-desc">
+          <Anime anime="fadeUp" delay={0.35} className="page-head-desc">
             <p>
-              국내시장 점유율 70%를 차지하며, 동남아, 중동, 유럽,
-              <br />
-              중남미 등 전세계 40여 개국에
-              <br />
-              제품을 수출하고 있습니다.
+              With a 70% market share in Korea, RIGAS leads the market in standard gases.<br />
+              As a trusted partner, RIGAS continues to strengthen its position as a Key Manufacturer.<br />
+              Expanding our presence in the global market, we are supplying products to more than 40 countries worldwide.
             </p>
           </Anime>
         </div>
       </div>
+
+      <Anime anime="fadeUp" delay={0.5} className="global-network-clients">
+        <span className="global-network-clients-badge">Major Clients</span>
+        <div className="global-network-clients-body">
+          {clientGroups.map((group) => (
+            <div key={group.title} className="global-network-clients-group">
+              <h3 className="global-network-clients-group-title">{group.title}</h3>
+              <ul className="global-network-clients-list">
+                {group.items.map((item) => (
+                  <li key={item.img} className="global-network-clients-item">
+                    <Image src={item.img} alt={item.alt} />
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </Anime>
 
       <Anime anime="fadeIn" delay={0.45} className="global-network-visual">
         <GlobeNetwork className="global-network-globe" />

@@ -39,11 +39,7 @@ export const CatalogProvider = ({ children }) => {
   
   // pageFlatMap에서의 실제 인덱스 찾기
   const pageIndex = pageFlatMap.findIndex(path => {
-    if (pageSlug1 === 'cover') {
-      // cover 페이지의 경우 pageSlug2도 고려
-      const expectedPath = pageSlug2 ? `${pageSlug1}/${pageSlug2}` : `${pageSlug1}/intro`;
-      return path === expectedPath;
-    } else if (pageSlug1 === 'company') {
+    if (pageSlug1 === 'company') {
       // company 페이지의 경우 pageSlug2와 pageSlug3도 고려
       if (pageSlug2 === 'products' && pageSlug3) {
         // products의 하위 페이지 (content1, content2)
@@ -51,7 +47,7 @@ export const CatalogProvider = ({ children }) => {
         return path === expectedPath;
       } else {
         // company의 다른 페이지들
-        const expectedPath = pageSlug2 ? `${pageSlug1}/${pageSlug2}` : `${pageSlug1}/history`;
+        const expectedPath = pageSlug2 ? `${pageSlug1}/${pageSlug2}` : `${pageSlug1}/overview`;
         return path === expectedPath;
       }
     } else if (pageSlug1 === 'system') {

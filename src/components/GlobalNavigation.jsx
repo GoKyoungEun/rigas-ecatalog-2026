@@ -1,58 +1,42 @@
 import { twMerge } from "tailwind-merge";
 import {
   CatalogLink,
+  CatalogAutoplayButton,
   CatalogPagingButton,
 } from "catalog/CatalogNavigations";
 import { PageIndex } from "catalog/Catalog.context";
 import { useParams } from "react-router-dom";
 import { Image, Lang } from "components/elements";
 
-const companySubmenu = [
-  "Overview",
-  "History",
-  "Qualified Agency",
-  "R&D Achievement",
-  "Global Network",
-];
-
-const productSubmenu = [
-  "Maintaining Traceability",
-  "Standard Gas",
-  "Mixed Gas",
-  "Gas Cylinder/Valve",
-  "rigas | ONE Series",
-  "rigas | PAS",
-  "RIGAS Regulator for Calibration Gases",
-];
-
 export default function GlobalNavigation() {
   const { lang, pageSlug1, pageSlug2 } = useParams();
 
-  const isCompanySection = pageSlug1 === "company" || pageSlug1 === "cover";
+  const isIndexPage = pageSlug1 === "index";
+  const isCompanySection = pageSlug1 === "company";
   const isProductSection = pageSlug1 === "product";
   const showHeader = pageSlug1 !== "intro" && pageSlug1 !== "last";
 
   return (
     <div className="pointer-events-none absolute left-0 top-0 z-[9999] h-full w-full">
       {showHeader && (
-        <div className="rigas-header-wrap pointer-events-auto">
+        <div className={twMerge("rigas-header-wrap pointer-events-auto", isIndexPage && "rigas-header-wrap--index")}>
           <header className="rigas-header">
             <CatalogLink to="/intro" className="rigas-header-logo">
               <Image src="logo.svg" alt="RIGAS" />
             </CatalogLink>
 
             <nav className="rigas-header-nav">
-              <div className="rigas-header-nav-item rigas-header-nav-item--company">
+              <CatalogLink to="/company/overview" className="rigas-header-nav-item rigas-header-nav-item--company">
                 <span className={twMerge("rigas-header-nav-label", isCompanySection && "active")}>
                   Company
                 </span>
-              </div>
+              </CatalogLink>
               <span className="rigas-header-divider" aria-hidden="true" />
-              <div className="rigas-header-nav-item rigas-header-nav-item--product">
+              <CatalogLink to="/product/cover" className="rigas-header-nav-item rigas-header-nav-item--product">
                 <span className={twMerge("rigas-header-nav-label", isProductSection && "active")}>
                   Product
                 </span>
-              </div>
+              </CatalogLink>
             </nav>
 
             <div className="rigas-header-utils">
@@ -66,32 +50,32 @@ export default function GlobalNavigation() {
               >
                 <Lang content={{ en: "KOR", ko: "ENG" }} />
               </CatalogLink> */}
-              <CatalogLink to="/cover/index" className="rigas-header-menu" aria-label="Menu">
-                <span />
-                <span />
-                <span />
+              <CatalogAutoplayButton
+                className="rigas-header-autoplay"
+                aria-label="Autoplay"
+                render={{
+                  play: (
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9e9e9e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    </svg>
+                  ),
+                  pause: (
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9e9e9e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <rect x="6" y="4" width="4" height="16"></rect>
+                      <rect x="14" y="4" width="4" height="16"></rect>
+                    </svg>
+                  ),
+                }}
+              />
+              <CatalogLink to="/index" className="rigas-header-menu" aria-label="Menu">
+                <span className="rigas-header-menu-icon">
+                  <span />
+                  <span />
+                  <span />
+                </span>
               </CatalogLink>
             </div>
           </header>
-
-          <div className="rigas-header-submenu rigas-header-submenu--company">
-            <ul>
-              {companySubmenu.map((label) => (
-                <li key={label}>
-                  <span>{label}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
-          <div className="rigas-header-submenu rigas-header-submenu--product">
-            <ul>
-              {productSubmenu.map((label) => (
-                <li key={label}>
-                  <span>{label}</span>
-                </li>
-              ))}
-            </ul>
-          </div>
         </div>
       )}
 

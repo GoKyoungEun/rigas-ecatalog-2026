@@ -3,6 +3,8 @@ import CatalogContainer from "./CatalogContainer";
 import CatalogScaler from "./CatalogScaler";
 import CatalogPageRouter from "./CatalogPageRouter";
 import GlobalNavigation from "components/GlobalNavigation";
+import IntroVideoLayer from "components/IntroVideoLayer";
+import IntroHeroTextLayer from "components/IntroHeroTextLayer";
 import ScrollTop from "./ScrollTop";
 import SianNav from "components/SianNav";
 import DragController from "./DragController";
@@ -14,9 +16,11 @@ export default function Catalog() {
     <CatalogProvider>
       <ScrollTop />
       <DragController />
-      {process.env.REACT_APP_IS_SIAN === "true" && <SianNav />}
+      {process.env.REACT_APP_IS_SIAN === "false" && <SianNav />}
       <CatalogContainer>
         <CatalogScaler>
+          <IntroVideoLayer />
+          <IntroHeroTextLayer />
           <CatalogPageRouter />
           <GlobalNavigation />
         </CatalogScaler>

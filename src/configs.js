@@ -6,13 +6,10 @@ export const catalogConfigs = {
   langSet: ["ko", "en"],
   pageMap: [
     "intro",
-    {
-      name: "cover",
-      outlets: ["index", "overview"],
-    },
+    "index",
     {
       name: "company",
-      outlets: ["history", "global-network"],
+      outlets: ["overview", "history", "performance", "global-network", "analysis-process"],
     },
     {
       name: "product",

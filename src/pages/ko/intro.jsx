@@ -13,7 +13,7 @@ const pageInfo = {
 export default function Last() {
   return (
     <CatalogPage pageInfo={pageInfo} className="intro">
-      <CatalogLink to="/cover/index" className="skip-btn">
+      <CatalogLink to="/index" className="skip-btn">
         <span>INTRO<br />SKIP</span>
       </CatalogLink>
       <motion.div
