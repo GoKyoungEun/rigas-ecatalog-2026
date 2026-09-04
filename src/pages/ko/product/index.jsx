@@ -1,5 +1,6 @@
 import { twMerge } from "tailwind-merge";
 import Sluger from "catalog/Sluger";
+import ProductTraceability from "./traceability";
 import ProductCover from "./cover";
 import Product01 from "./product01";
 import Product02 from "./product02";
@@ -13,6 +14,7 @@ export default function Product() {
     <div className="contents-wrap">
       <Sluger
         routes={[
+            { path: "traceability", element: <ProductTraceability /> },
             { path: "cover", element: <ProductCover /> },
             { path: "product01", element: <Product01 /> },
             { path: "product02", element: <Product02 /> },

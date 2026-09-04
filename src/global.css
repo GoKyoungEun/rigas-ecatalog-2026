@@ -24,6 +24,8 @@ body {
 .bg img {width: 100%; height: 100%; object-fit: cover;}
 .bg video {width: 100%; height: 100%; object-fit: cover;}
 
+.dim {position: absolute; z-index: -1; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0, 0, 0, 0.7);}
+
 .contents-wrap {width: 100%; height: 100%;}
 .wrap {padding: 87px; padding-top: 160px; padding-left: 110px; width: 100%; height: 100%;}
 
@@ -294,6 +296,32 @@ body {
   .performance-item-caption {font-size: 13px;}
 }
 
+/* analysis process */
+.analysis-process .page-head {flex-direction: column; align-items: flex-start; gap: 28px;}
+.analysis-process-steps {display: grid; grid-template-columns: repeat(5, 1fr); column-gap: 10px; margin-top: 70px;}
+.analysis-process-step {display: flex; flex-direction: column; background-color: #F8F8F8; padding-bottom: 45px; border-bottom: 2px solid #8E8E8E;}
+.analysis-process-step-img {width: 100%;}
+.analysis-process-step-img img {width: 100%; height: auto; display: block;}
+.analysis-process-step-bar {position: relative; height: 11px; background: #9FA4A8;}
+.analysis-process-step-content {padding: 22px 15px 0; display: flex; flex-direction: column; gap: 20px;}
+.analysis-process-arrow {position: absolute; z-index: 2; top: calc(100% + 110px); right: -16px; transform: translateY(-50%); width: 23px; height: 23px; display: flex;}
+.analysis-process-arrow img {width: 100%; height: 100%; display: block;}
+.analysis-process-step-label {font-size: 20px; font-weight: 700; color: var(--primary); letter-spacing: 0.02em; font-family: var(--font-second);}
+.analysis-process-step-list {display: flex; flex-direction: column; gap: 10px; margin: 0; padding: 0; list-style: none;}
+.analysis-process-step-list li {position: relative; padding-left: 16px; font-size: 18px; line-height: 1.5; color: #333;}
+.analysis-process-step-list li::before {content: ""; position: absolute; left: 0; top: 9px; width: 6px; height: 6px; border-radius: 50%; background: var(--primary);}
+.analysis-process-step-list strong {color: #000; font-weight: 700;}
+
+@media screen and (max-width: 767px) {
+  .analysis-process-steps {grid-template-columns: 1fr; row-gap: 56px; column-gap: 0; margin-top: 40px;}
+  .analysis-process-step {position: relative; padding-bottom: 24px;}
+  .analysis-process-step-bar {position: static;}
+  .analysis-process-arrow {display: flex; top: auto; right: auto; bottom: -40px; left: 50%; transform: translateX(-50%) rotate(90deg);}
+  .analysis-process-step-content {padding: 16px 15px 0; gap: 14px;}
+  .analysis-process-step-label {font-size: 17px;}
+  .analysis-process-step-list li {font-size: 14px;}
+}
+
 /* global network */
 .global-network {background: #fff; overflow: hidden;}
 .global-network .wrap {position: relative; z-index: 2;}
@@ -326,7 +354,7 @@ body {
 
 @media screen and (max-width: 767px) {
   .global-network .page-head-desc {padding-top: 0px;}
-  .global-network .wrap {padding-bottom: 40px;}
+  .global-network .wrap {padding-bottom: 0px;}
   .global-network-clients {position: relative; left: auto; top: auto; width: calc(100% - 28px); border-radius: 0 24px 24px 0; box-shadow: 4px 4px 12px rgba(0, 0, 0, 0.12); padding-bottom: 28px; padding-left: 20px; margin-bottom: 40px;}
   .global-network-clients-badge {margin-bottom: 20px; padding: 8px 20px; font-size: 17px; border-radius: 0 0 10px 10px;}
   .global-network-clients-body {gap: 24px; padding: 0 20px 0 0;}
@@ -379,6 +407,39 @@ body {
   #last .last-info .inner .btn-box {margin-top: 40px; flex-direction: column;}
 }
 
+/* traceability */
+.traceability .page-head {flex-direction: column; align-items: flex-start; gap: 41px;}
+.traceability .page-head-cate {color: #fff;}
+.traceability .page-head-sbj {color: #fff;}
+.traceability .page-head-desc p {color: #fff;}
+
+.traceability-lines {position: absolute; z-index: 1; left: 1029px; top: 239px; width: 587px; height: 610px; pointer-events: none;}
+.traceability-lines img {width: 100%; height: 100%; display: block;}
+
+.traceability-node {position: absolute; z-index: 1; width: 240px; padding: 30px 15px; border: 1px solid rgba(255, 255, 255, 0.5); border-radius: 12px; background: rgba(255, 255, 255, 0.06); -webkit-backdrop-filter: blur(6px); backdrop-filter: blur(6px); text-align: center; color: #fff;}
+.traceability-node-title {font-family: var(--font-second); font-size: 25px; font-weight: 700; margin-bottom: 6px;}
+.traceability-node-sub {font-size: 15px; font-weight: 400; color: rgba(255, 255, 255, 0.75);}
+
+.traceability-node--si {left: 1205px; top: 200px;}
+.traceability-node--ilac {left: 910px; top: 334px;}
+.traceability-node--apac {left: 910px; top: 488px;}
+.traceability-node--kolas {left: 910px; top: 636px;}
+.traceability-node--bipm {left: 1505px; top: 334px;}
+.traceability-node--nmis {left: 1505px; top: 488px;}
+
+.traceability-circle {position: absolute; z-index: 1; left: 1116px; top: 644px; width: 414px; height: 414px;}
+.traceability-circle img {width: 100%; height: 100%; display: block;}
+
+@media screen and (max-width: 767px) {
+  .traceability-lines {display: none;}
+  .traceability-node {position: relative; left: auto !important; top: auto !important; width: calc(100% - 40px); margin: 0 20px 32px; padding: 16px 20px;}
+  .traceability-node::after {content: ""; position: absolute; left: 50%; top: 100%; width: 0; height: 32px; border-left: 1px dashed rgba(255, 255, 255, 0.5); transform: translateX(-50%);}
+  .traceability-node--kolas::after {display: none;}
+  .traceability-node-title {font-size: 17px;}
+  .traceability-node-sub {font-size: 12px;}
+  .traceability-circle {position: relative; left: auto; top: auto; width: 200px; height: 200px; margin: 0 auto;}
+}
+
 /* product cover */
 .product-cover {display: flex; flex-direction: column; height: 100%; min-height: 100vh; background-color: #fff;}
 .product-cover-hero {position: relative; flex-shrink: 0; height: 473px; overflow: hidden;}
@@ -388,7 +449,7 @@ body {
 .product-cover-hero-text {position: relative; z-index: 1; padding: 220px 110px 0;}
 .product-cover-hero-text h2 {font-family: var(--font-second); font-size: 50px; font-weight: 700; color: #fff; margin-bottom: 30px; line-height: 1.2;}
 .product-cover-hero-text p {font-size: 20px; font-weight: 400; color: #fff; line-height: 1.5; max-width: 882px;}
-.product-cover-grid {display: grid; grid-template-columns: repeat(6, 1fr); flex: 1; min-height: 607px; list-style: none; margin: 0; padding: 0;}
+.product-cover-grid {display: grid; grid-template-columns: repeat(4, 1fr); flex: 1; min-height: 607px; list-style: none; margin: 0; padding: 0;}
 .product-cover-item {position: relative; min-height: 607px; border-left: 1px solid #e5e5e5; background-color: #f9f9f9; overflow: hidden; transition: background-color 0.35s ease;}
 .product-cover-item:first-child {border-left: none;}
 .product-cover-item-inner {position: relative; height: 100%; min-height: 607px; padding: 35px 45px 200px;}
@@ -406,7 +467,7 @@ body {
 .product-cover-submenu-arrow {flex-shrink: 0; width: 22px; height: 22px;}
 .product-cover-back {position: absolute; left: 35px; bottom: 35px; z-index: 2; padding: 0; border: none; background: none; cursor: pointer; opacity: 0; visibility: hidden; transition: opacity 0.3s ease, visibility 0.3s ease;}
 .product-cover-back img {display: block; width: 24px; height: auto;}
-.product-cover-item-deco {position: absolute; right: 0; bottom: 0; width: 200px; height: 195px; background-color: #707070; opacity: 0.2; pointer-events: none; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-size: contain; mask-size: contain; -webkit-mask-position: right bottom; mask-position: right bottom; transition: background-color 0.35s ease, opacity 0.35s ease;}
+.product-cover-item-deco {position: absolute; right: 0; bottom: 75px; width: 200px; height: 195px; background-color: #707070; opacity: 0.2; pointer-events: none; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-size: contain; mask-size: contain; -webkit-mask-position: right bottom; mask-position: right bottom; transition: background-color 0.35s ease, opacity 0.35s ease;}
 .product-cover-item:hover,
 .product-cover-item.is-active {background-color: var(--primary);}
 .product-cover-item:hover h3,

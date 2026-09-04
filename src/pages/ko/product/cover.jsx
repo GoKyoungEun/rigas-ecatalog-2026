@@ -45,13 +45,7 @@ const products = [
     ],
   },
   {
-    title: "Gas Cylinder<br />/Valve",
-    desc: "Durable cylinders and precision valves engineered for safe storage and stable gas delivery.",
-    deco: "product/card-deco03.svg",
-    submenu: [],
-  },
-  {
-    title: "rigas | ONE <br />Series",
+    title: "rigas | ONE",
     desc: "Compact 1L calibration gas solutions offering excellent portability, convenience, and reliability.",
     deco: "product/card-deco04.svg",
     submenu: [
@@ -59,12 +53,6 @@ const products = [
       { label: "PAMS", to: "#" },
       { label: "TO-14A", to: "#" },
     ],
-  },
-  {
-    title: "rigas | PAS",
-    desc: "Pre-analysis system that removes contaminants and moisture to improve analytical accuracy and efficiency.",
-    deco: "product/card-deco05.svg",
-    submenu: [],
   },
   {
     title: "Regulator",

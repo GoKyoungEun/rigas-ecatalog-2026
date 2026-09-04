@@ -32,7 +32,7 @@ export default function GlobalNavigation() {
                 </span>
               </CatalogLink>
               <span className="rigas-header-divider" aria-hidden="true" />
-              <CatalogLink to="/product/cover" className="rigas-header-nav-item rigas-header-nav-item--product">
+              <CatalogLink to="/product/traceability" className="rigas-header-nav-item rigas-header-nav-item--product">
                 <span className={twMerge("rigas-header-nav-label", isProductSection && "active")}>
                   Product
                 </span>

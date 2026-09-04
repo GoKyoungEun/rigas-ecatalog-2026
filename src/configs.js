@@ -13,7 +13,7 @@ export const catalogConfigs = {
     },
     {
       name: "product",
-      outlets: ["cover", "product01", "product02"],
+      outlets: ["traceability", "cover", "product01", "product02"],
     },
     "last"
   ],
