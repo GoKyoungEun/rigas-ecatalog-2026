@@ -17,10 +17,10 @@ const companyItems = [
 
 const productItems = [
   { num: "01", label: "Traceability", to: "/product/traceability" },
-  { num: "02", label: "Standard Gas", to: "/product/standard-gas" },
-  { num: "03", label: "Mixed Gas", to: "/product/mixed-gas" },
-  { num: "04", label: "rigas | ONE", to: "/product/rigas-one" },
-  { num: "05", label: "Regulator", to: "/product/regulator" },
+  { num: "02", label: "Standard Gas", to: "/product/standard-gas/atmospheric-standards" },
+  { num: "03", label: "Mixed Gas", to: "/product/mixed-gas/laser-gas-mixtures" },
+  { num: "04", label: "rigas | ONE", to: "/product/rigas-one/rigas-one" },
+  { num: "05", label: "Regulator", to: "#" },
 ];
 
 function IndexArrow() {

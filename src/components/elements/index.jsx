@@ -9,6 +9,8 @@ import Tabs from "./Tabs";
 import SpecTable from "./SpecTable";
 import RangeSpecTable from "./RangeSpecTable";
 import GroupedSpecTable from "./GroupedSpecTable";
+import CategoryList from "./CategoryList";
+import IconCardGrid from "./IconCardGrid";
 
 export {
   Anime,
@@ -23,4 +25,6 @@ export {
   SpecTable,
   RangeSpecTable,
   GroupedSpecTable,
+  CategoryList,
+  IconCardGrid,
 };

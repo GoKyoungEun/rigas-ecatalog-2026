@@ -550,7 +550,7 @@ body {
 .spec-table--range td {border-bottom: 1px solid #ccc; padding: 11px 18px; text-align: center; font-size: 16px; line-height: 1.4; word-break: keep-all;}
 .spec-table--range td  {padding: 9px 18px;}
 .spec-table--range thead th {background-color: #FBE9EC; color: var(--primary); font-weight: 700; border-bottom: none;}
-.spec-table--range tbody td:first-child {font-weight: 700; color: #444444;}
+.spec-table--range tbody td:first-child {font-weight: 700; color: #444444; background-color: #F9F9F9;}
 
 .spec-table-split-cell {display: flex; flex-direction: column; height: 100%; min-height: 90px;}
 .spec-table-split-top {flex: 1; display: flex; align-items: center; padding-bottom: 14px;}
@@ -572,6 +572,19 @@ body {
 .spec-table-grouped th:not(.spec-table-grouped-cat) {background-color: #FFF9F9;}
 .spec-table-grouped th:empty,
 .spec-table-grouped td:empty {background-color: transparent;}
+
+.category-list {display: flex; gap: 40px;}
+.category-list-col {flex: 1;}
+.category-list-title {padding-bottom: 12px; margin-bottom: 14.5px; font-size: 20px; font-weight: 700; color: var(--primary); border-bottom: 1px solid var(--primary);}
+.category-list-items {display: flex; flex-direction: column; gap: 14px; margin: 0; padding: 0; list-style: none;}
+.category-list-items li {position: relative; padding-left: 16px; font-size: 17px; font-weight: 500; color: #000;}
+.category-list-items li::before {content: ""; position: absolute; left: 0; top: 8px; width: 6px; height: 6px; border-radius: 50%; background-color: var(--primary);}
+
+.icon-card-grid {display: grid; grid-template-columns: repeat(4, 1fr); gap: 24px;}
+.icon-card {display: flex; flex-direction: column; align-items: center; justify-content: flex-start; gap: 18px; padding: 20px 20px; background-color: #fff; border: 1px solid #E5E5E5; border-radius: 10px; text-align: center;}
+.icon-card-icon {display: flex; align-items: center; justify-content: center; flex-shrink: 0; width: 69px; height: 69px;}
+.icon-card-icon img {width: 100%; height: 100%;}
+.icon-card-label {margin: 0; font-size: 17px; font-weight: 700; color: #000; line-height: 1.4; word-break: keep-all;}
 
 @media screen and (max-width: 767px) {
   .spec-table {flex-direction: column; gap: 0;}
@@ -600,14 +613,18 @@ body {
 .automobile-exhaust-standards .spec-table--range,
 .petrochemical-natural-gas-standards .spec-table--range,
 .odor-standards .spec-table--range,
-.voc-standards .spec-table--range {
+.voc-standards .spec-table--range,
+.laser-gas-mixtures .spec-table--range,
+.rigas-one .spec-table--range {
   border-bottom: 2px solid #ccc;
 }
 .atmospheric-standards .spec-table--range thead,
 .automobile-exhaust-standards .spec-table--range thead,
 .petrochemical-natural-gas-standards .spec-table--range thead,
 .odor-standards .spec-table--range thead,
-.voc-standards .spec-table--range thead {
+.voc-standards .spec-table--range thead,
+.laser-gas-mixtures .spec-table--range thead,
+.rigas-one .spec-table--range thead {
   border-top: 2px solid var(--primary);
   border-bottom: 2px solid var(--primary);
 }
@@ -619,7 +636,8 @@ body {
 .automobile-exhaust-standards .spec-table--range thead tr:nth-child(2) th,
 .petrochemical-natural-gas-standards .spec-table--range thead tr:nth-child(2) th,
 .odor-standards .spec-table--range thead tr:nth-child(2) th,
-.voc-standards .spec-table--range thead tr:nth-child(2) th {
+.voc-standards .spec-table--range thead tr:nth-child(2) th,
+.laser-gas-mixtures .spec-table--range thead tr:nth-child(2) th {
   border-bottom: none;
   border-top: 1px solid #CCCCCC;
   background-color: #FFF9F9;
@@ -658,6 +676,24 @@ body {
 .voc-standards .product-detail-visual {right: 125px; bottom: 135px; width: 551px;}
 .voc-standards .product-detail-body {margin-top: 60px;}
 
+/* Laser Gas Mixtures */
+.laser-gas-mixtures.product-detail .page-head {gap: 22px;}
+.laser-gas-mixtures .category-list {border-top: 2px solid var(--primary); padding-top: 15px;}
+.laser-gas-mixtures .product-detail-visual {right: 135px; bottom: 135px; width: 532px;}
+.laser-gas-mixtures .product-detail-body {margin-top: 60px;}
+.laser-gas-mixtures .tabs-nav-btn {cursor: default;}
+.laser-gas-mixtures .tabs-panel--scroll { max-height: 320px;}
+
+/* Other Gas Mixtures */
+.other-gas-mixtures.product-detail .page-head {gap: 22px;}
+.other-gas-mixtures .product-detail-visual {right: 180px; bottom: 87px; width: 452px;}
+.other-gas-mixtures .tabs-nav {border-bottom: 2px solid var(--primary); margin-bottom: 29px;}
+.other-gas-mixtures .product-detail-body {margin-top: 99px;}
+.other-gas-mixtures .tabs-nav-btn {cursor: default;}
+
+/* rigas | ONE */
+.rigas-one .product-detail-visual {right: 191px; bottom: 136px; width: 414px;}
+.rigas-one .product-detail-body {margin-top: 60px;}
 
 
 

@@ -40,8 +40,8 @@ const products = [
     desc: "Custom gas mixtures manufactured to meet diverse industrial, environmental, and research applications.",
     deco: "product/card-deco02.svg",
     submenu: [
-      { label: "Laser Gas Mixtures", to: "product/mixed-gas/product02-1" },
-      { label: "Other GasM ixtures", to: "product/mixed-gas/product02-2" },
+      { label: "Laser Gas Mixtures", to: "product/mixed-gas/laser-gas-mixtures" },
+      { label: "Other GasM ixtures", to: "product/mixed-gas/other-gas-mixtures" },
     ],
   },
   {
@@ -49,7 +49,7 @@ const products = [
     desc: "Compact 1L calibration gas solutions offering excellent portability, convenience, and reliability.",
     deco: "product/card-deco04.svg",
     submenu: [
-      { label: "rigas | ONE", to: "#" },
+      { label: "rigas | ONE", to: "product/rigas-one/rigas-one" },
       { label: "PAMS", to: "#" },
       { label: "TO-14A", to: "#" },
     ],

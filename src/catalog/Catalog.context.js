@@ -55,8 +55,8 @@ export const CatalogProvider = ({ children }) => {
       const expectedPath = pageSlug2 ? `${pageSlug1}/${pageSlug2}` : `${pageSlug1}/overview`;
       return path === expectedPath;
     } else if (pageSlug1 === 'product') {
-      if (pageSlug2 === 'standard-gas' && pageSlug3) {
-        // standard-gas의 하위 페이지 (atmospheric-standards 등)
+      if (pageSlug2 && pageSlug3) {
+        // standard-gas, mixed-gas 등 중첩된 outlet의 하위 페이지
         const expectedPath = `${pageSlug1}/${pageSlug2}/${pageSlug3}`;
         return path === expectedPath;
       } else {

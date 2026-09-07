@@ -26,8 +26,14 @@ export const catalogConfigs = {
             "voc-standards",
           ],
         },
-        "product02-1",
-        "product02-2",
+        {
+          name: "mixed-gas",
+          outlets: ["laser-gas-mixtures", "other-gas-mixtures"],
+        },
+        {
+          name: "rigas-one",
+          outlets: ["rigas-one"],
+        },
       ],
     },
     "last"
