@@ -26,7 +26,7 @@ body {
 
 .dim {position: absolute; z-index: -1; width: 100%; height: 100%; top: 0; left: 0; background: rgba(0, 0, 0, 0.7);}
 
-.contents-wrap {width: 100%; height: 100%;}
+.contents-wrap {width: 100%; height: 100%; overflow: hidden;}
 .wrap {padding: 87px; padding-top: 160px; padding-left: 110px; width: 100%; height: 100%;}
 
 .page-title {}
@@ -182,7 +182,7 @@ body {
 }
 
 .page-head {position: relative; z-index: 1; display: flex; align-items: flex-end; gap: 80px;}
-.page-head-cate {font-size: 20px; font-weight: 400; font-family: var(--font-second); color: var(--primary); letter-spacing: 0.04em; margin-bottom: 18px;}
+.page-head-cate {font-size: 20px; font-weight: 400; font-family: var(--font-second); color: var(--primary); letter-spacing: 0.04em; margin-bottom: 14px;}
 .page-head-sbj {font-size: 60px; font-weight: 700; line-height: 1.2; color: #000; letter-spacing: -0.02em;}
 .page-head-desc p {font-size: 20px; font-weight: 400; line-height: 1.7; color: #000;}
 @media screen and (max-width: 767px) {
@@ -454,6 +454,7 @@ body {
 .product-cover-item:first-child {border-left: none;}
 .product-cover-item-inner {position: relative; height: 100%; min-height: 607px; padding: 35px 45px 200px;}
 .product-cover-item-icon {position: absolute; top: 35px; right: 35px; width: 34px; height: 34px; z-index: 2;}
+.product-cover-item-icon a {display: block; width: 100%; height: 100%;}
 .product-cover-item-icon img {width: 100%; height: 100%; object-fit: contain;}
 .product-cover-item h3 {font-family: var(--font-second); font-size: 26px; font-weight: 600; color: var(--primary); margin: 65px 0 0; line-height: 1.3; transition: color 0.35s ease, margin 0.35s ease;}
 .product-cover-item-divider {width: 100%; height: 1px; border: none; background-color: #949494; margin: 12px 0 15px; transition: opacity 0.3s ease;}
@@ -503,13 +504,159 @@ body {
   .product-cover-submenu-link {font-size: 13px; padding: 12px 0;}
 }
 
+/* product detail (table pages) */
+.product-detail {position: relative; z-index: 0; background-color: #fff; overflow: hidden;}
+.product-detail .bg {width: 500px; left: auto; right: 0;}
+.product-detail-visual {position: absolute; z-index: 1;}
+.product-detail-visual img {width: 100%; height: auto; display: block;}
+.product-detail .wrap {position: relative; z-index: 2; max-width: 1390px;}
+.product-detail .page-head {flex-direction: column; align-items: flex-start; gap: 42px;}
+.product-detail .page-head-cate {font-size: 28px;}
+.product-detail .page-head-sbj {font-size: 45px;}
 
+@media screen and (max-width: 767px) {
+  .product-detail .bg {width: 100%; opacity: 0.25;}
+  .product-detail-visual {display: none;}
+  .product-detail .wrap {max-width: none;}
+}
 
+/* tabs */
+.tabs-nav {display: flex;}
+.tabs-nav-btn {flex-shrink: 0; padding: 12px 49px; font-size: 20px; font-weight: 700; color: #fff; background-color: var(--gray2); border: none; cursor: pointer; transition: background-color 0.25s ease;}
+.tabs-nav-btn.is-active {background-color: var(--primary);}
 
+.spec-section + .spec-section {margin-top: 42px;}
 
+.tabs-scroll-wrap {position: relative;}
+.tabs-panel--scroll {max-height: 430px; overflow-y: auto; padding-right: 34.5px; scrollbar-width: none;}
+.tabs-panel--scroll::-webkit-scrollbar {display: none;}
+.tabs-scrollbar-track {position: absolute; top: 0; right: 14px; width: 3px; height: 100%; background: rgb(220, 220, 220);}
+.tabs-scrollbar-thumb {position: absolute; left: 0; width: 3px; background: var(--primary); cursor: pointer;}
 
+@media screen and (max-width: 767px) {
+  .tabs-nav-btn {flex: 1; padding: 12px 0; font-size: 15px;}
+  .spec-section + .spec-section {margin-top: 32px;}
+}
 
+/* spec table */
+.spec-table {display: flex; gap: 40px;}
+.spec-table-col {flex: 1; width: 100%; border-collapse: collapse;}
+.spec-table-col tr {border-bottom: 1px solid #e5e5e5;}
+.spec-table-col th {width: 55%; padding: 9px 20px; text-align: left; font-size: 16px; font-weight: 700; color: #000; background-color: #F9F9F9;}
+.spec-table-col td {padding: 9px 20px; text-align: center; font-size: 16px; font-weight: 400; color: #000;}
 
+.spec-table--range {width: 100%; table-layout: fixed; border-collapse: collapse;}
+.spec-table--range th,
+.spec-table--range td {border-bottom: 1px solid #ccc; padding: 11px 18px; text-align: center; font-size: 16px; line-height: 1.4; word-break: keep-all;}
+.spec-table--range td  {padding: 9px 18px;}
+.spec-table--range thead th {background-color: #FBE9EC; color: var(--primary); font-weight: 700; border-bottom: none;}
+.spec-table--range tbody td:first-child {font-weight: 700; color: #444444;}
+
+.spec-table-split-cell {display: flex; flex-direction: column; height: 100%; min-height: 90px;}
+.spec-table-split-top {flex: 1; display: flex; align-items: center; padding-bottom: 14px;}
+.spec-table-split-top span {flex: 1; text-align: center;}
+.spec-table-split-top span:nth-child(1) {padding-right: 18px;}
+.spec-table-split-top span:nth-child(2) {padding-left: 18px;}
+.spec-table-split-bottom {flex: 1; display: flex; align-items: center; justify-content: center; text-align: center; border-top: 1px solid #EAEAEA; padding-top: 13px;}
+
+.spec-table-notes {margin-top: 14px; padding: 0; list-style: none;}
+.spec-table-notes li {position: relative; padding-left: 14px; font-size: 14px; line-height: 1.6; color: #707070; font-weight: 500;}
+.spec-table-notes li::before {content: "※"; position: absolute; left: 0; top: 0;}
+
+.spec-table-grouped {width: 100%; table-layout: fixed; border-collapse: collapse;}
+.spec-table-grouped th,
+.spec-table-grouped td {border-bottom: 1px solid #cccccc; padding: 11px 18px; font-size: 16px; line-height: 1.4;}
+.spec-table-grouped th {text-align: left; font-weight: 700; color: #000;}
+.spec-table-grouped td {text-align: center; font-weight: 400; color: #333;}
+.spec-table-grouped-cat {background-color: #FBE9EC; color: #000; vertical-align: middle;}
+.spec-table-grouped th:not(.spec-table-grouped-cat) {background-color: #FFF9F9;}
+.spec-table-grouped th:empty,
+.spec-table-grouped td:empty {background-color: transparent;}
+
+@media screen and (max-width: 767px) {
+  .spec-table {flex-direction: column; gap: 0;}
+  .spec-table-col th,
+  .spec-table-col td {padding: 12px 10px; font-size: 14px;}
+  .spec-table--range {display: block; overflow-x: auto;}
+  .spec-table--range th,
+  .spec-table--range td {padding: 10px 12px; font-size: 13px; white-space: nowrap;}
+  .spec-table-grouped {display: block; overflow-x: auto;}
+  .spec-table-grouped th,
+  .spec-table-grouped td {padding: 10px 12px; font-size: 13px; white-space: nowrap;}
+}
+
+/* atmospheric-standards */
+.atmospheric-standards .product-detail-body {
+  margin-top: 85px;
+}
+@media screen and (max-width: 767px) {
+  .atmospheric-standards .product-detail-body {
+    margin-top: 32px;
+  }
+}
+.atmospheric-standards .product-detail-visual {right: 135px; bottom: 170px; width: 532px;}
+
+.atmospheric-standards .spec-table--range,
+.automobile-exhaust-standards .spec-table--range,
+.petrochemical-natural-gas-standards .spec-table--range,
+.odor-standards .spec-table--range,
+.voc-standards .spec-table--range {
+  border-bottom: 2px solid #ccc;
+}
+.atmospheric-standards .spec-table--range thead,
+.automobile-exhaust-standards .spec-table--range thead,
+.petrochemical-natural-gas-standards .spec-table--range thead,
+.odor-standards .spec-table--range thead,
+.voc-standards .spec-table--range thead {
+  border-top: 2px solid var(--primary);
+  border-bottom: 2px solid var(--primary);
+}
+.atmospheric-standards .spec-table--range tbody tr td:first-child,
+.automobile-exhaust-standards .spec-table--range tbody tr td:first-child {
+  background-color: #FFF9F9;
+}
+.atmospheric-standards .spec-table--range thead tr:nth-child(2) th,
+.automobile-exhaust-standards .spec-table--range thead tr:nth-child(2) th,
+.petrochemical-natural-gas-standards .spec-table--range thead tr:nth-child(2) th,
+.odor-standards .spec-table--range thead tr:nth-child(2) th,
+.voc-standards .spec-table--range thead tr:nth-child(2) th {
+  border-bottom: none;
+  border-top: 1px solid #CCCCCC;
+  background-color: #FFF9F9;
+  color: #6C0612;
+}
+.atmospheric-standards .spec-table-col:nth-child(2) tr:last-child,
+.petrochemical-natural-gas-standards .spec-table-col:nth-child(2) tr:last-child {
+  border-bottom: none;
+}
+.atmospheric-standards .spec-table-col:nth-child(2) tr:last-child th,
+.petrochemical-natural-gas-standards .spec-table-col:nth-child(2) tr:last-child th {
+  background: none;
+}
+
+.atmospheric-standards .spec-table--range tbody tr:nth-child(3) td,
+.atmospheric-standards .spec-table--range tbody tr:nth-child(4) td,
+.atmospheric-standards .spec-table--range tbody tr:nth-child(5) td{
+  border-bottom: none;
+}
+.automobile-exhaust-standards .tabs-nav-btn {cursor: default;}
+.automobile-exhaust-standards.product-detail .page-head {gap: 22px;}
+.automobile-exhaust-standards .product-detail-body {margin-top: 56px;}
+
+.automobile-exhaust-standards .product-detail-visual {right: 175px; bottom: 108px; width: 448px;}
+
+/* Petrochemical and Natural Gas Standards */
+.petrochemical-natural-gas-standards .product-detail-visual {right: 260px; bottom: 95px; width: 450px;}
+.petrochemical-natural-gas-standards .product-detail-body {margin-top: 70px;}
+
+/* Odor Standards */
+.odor-standards .product-detail-visual {right: 180px; bottom: 87px; width: 452px;}
+.odor-standards .spec-table-range-wrap .spec-table--range tbody tr { height: 65px;}
+.odor-standards .product-detail-body {margin-top: 70px;}
+
+/* Volatile Organic Compound Standards */
+.voc-standards .product-detail-visual {right: 125px; bottom: 135px; width: 551px;}
+.voc-standards .product-detail-body {margin-top: 60px;}
 
 
 

@@ -28,11 +28,11 @@ const products = [
     desc: "Certified calibration gases designed to ensure accurate measurement, analysis, and instrument performance.",
     deco: "product/card-deco01.svg",
     submenu: [
-      { label: "Atmospheric Environmental Calibration Standards", to: "#" },
-      { label: "Automobile Exhaust Gas Standards", to: "#" },
-      { label: "Petrochemicaland Natural Gas Standards", to: "#" },
-      { label: "Odor Standards", to: "#" },
-      { label: "Volatile Organic Compound Standards(VOCs)", to: "#" },
+      { label: "Atmospheric Environmental Calibration Standards", to: "product/standard-gas/atmospheric-standards" },
+      { label: "Automobile Exhaust Gas Standards", to: "product/standard-gas/automobile-exhaust-standards" },
+      { label: "Petrochemical and Natural Gas Standards", to: "product/standard-gas/petrochemical-natural-gas-standards" },
+      { label: "Odor Standards", to: "product/standard-gas/odor-standards" },
+      { label: "Volatile Organic Compound Standards(VOCs)", to: "product/standard-gas/voc-standards" },
     ],
   },
   {
@@ -40,8 +40,8 @@ const products = [
     desc: "Custom gas mixtures manufactured to meet diverse industrial, environmental, and research applications.",
     deco: "product/card-deco02.svg",
     submenu: [
-      { label: "Laser Gas Mixtures", to: "#" },
-      { label: "Other GasM ixtures", to: "#" },
+      { label: "Laser Gas Mixtures", to: "product/mixed-gas/product02-1" },
+      { label: "Other GasM ixtures", to: "product/mixed-gas/product02-2" },
     ],
   },
   {
@@ -58,6 +58,7 @@ const products = [
     title: "Regulator",
     desc: "High-performance regulators that provide precise pressure control and stable gas flow.",
     deco: "product/card-deco06.svg",
+    to: "/product/regulator",
     submenu: [],
   },
 ];
@@ -106,8 +107,10 @@ export default function ProductCover() {
               onClick={() => handleCardClick(index, hasSubmenu)}
             >
               <Anime anime="fadeUp" delay={0.4 + index * 0.1} className="product-cover-item-inner">
-                <div className="product-cover-item-icon">
-                  <Image src="product/plus.svg" alt="" />
+                <div className="product-cover-item-icon" onClick={(e) => e.stopPropagation()}>
+                  <CatalogLink to={item.submenu[0]?.to || item.to}>
+                    <Image src="product/plus.svg" alt="" />
+                  </CatalogLink>
                 </div>
                 <h3>{renderTitle(item.title)}</h3>
                 <hr className="product-cover-item-divider" />

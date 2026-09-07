@@ -55,8 +55,14 @@ export const CatalogProvider = ({ children }) => {
       const expectedPath = pageSlug2 ? `${pageSlug1}/${pageSlug2}` : `${pageSlug1}/overview`;
       return path === expectedPath;
     } else if (pageSlug1 === 'product') {
-      const expectedPath = pageSlug2 ? `${pageSlug1}/${pageSlug2}` : `${pageSlug1}/cover`;
-      return path === expectedPath;
+      if (pageSlug2 === 'standard-gas' && pageSlug3) {
+        // standard-gas의 하위 페이지 (atmospheric-standards 등)
+        const expectedPath = `${pageSlug1}/${pageSlug2}/${pageSlug3}`;
+        return path === expectedPath;
+      } else {
+        const expectedPath = pageSlug2 ? `${pageSlug1}/${pageSlug2}` : `${pageSlug1}/cover`;
+        return path === expectedPath;
+      }
     } else if (pageSlug1 === 'catalog-index') {
       // catalog-index 페이지의 경우
       return path === pageSlug1;

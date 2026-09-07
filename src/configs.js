@@ -13,7 +13,22 @@ export const catalogConfigs = {
     },
     {
       name: "product",
-      outlets: ["traceability", "cover", "product01", "product02"],
+      outlets: [
+        "traceability",
+        "cover",
+        {
+          name: "standard-gas",
+          outlets: [
+            "atmospheric-standards",
+            "automobile-exhaust-standards",
+            "petrochemical-natural-gas-standards",
+            "odor-standards",
+            "voc-standards",
+          ],
+        },
+        "product02-1",
+        "product02-2",
+      ],
     },
     "last"
   ],
