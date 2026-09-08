@@ -330,7 +330,7 @@ export default function VocStandards() {
           </Anime>
           <Anime anime="fadeUp" delay={0.35} className="page-head-desc">
             <p>
-              VOCs in certain period may cause long term damage on human health, so its hall be
+              VOCs in certain period may cause long term damage on human health, so they shall be
               monitored. <br />
               The followings are calibration gas of volatile organic compound measuring system
               supplied <br />

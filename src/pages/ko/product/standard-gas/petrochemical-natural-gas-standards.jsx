@@ -283,7 +283,7 @@ export default function PetrochemicalNaturalGasStandards() {
             <p>
               RIGAS standard materials for petrochemical process are supplied in gas or liquid
               phase. <br />
-              Also, multi-compounds standard materials such as alkanes, alkens ,aromatics or other
+              Also, multi-compounds standard materials such as alkanes, alkenes, aromatics or other
               are available.
             </p>
           </Anime>

@@ -11,7 +11,7 @@ const features = [
   <>
     1 µmol/mol (ppm) in Nitrogen, 110 L, 10 MPa
     <br />
-    10 nmol/mol (ppb) in Nitrogen, 110 L, 10 MPa
+    5 nmol/mol (ppb) in Nitrogen, 110 L, 10 MPa
   </>,
   "Highly convenient and portable small 1 L container",
   "Highly reliable values proven through short-term and long-term stability assessment",

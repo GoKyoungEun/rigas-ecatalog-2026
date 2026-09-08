@@ -31,7 +31,7 @@ const nodes = [
   {
     key: "apac",
     title: "APAC",
-    sub: "Reginal Cooperation",
+    sub: "Regional Cooperation",
     delay: 0.8,
     anime: { default: "fadeLeft", mobile: "fadeUp" },
   },
@@ -66,7 +66,7 @@ export default function ProductTraceability() {
           </Anime>
           <Anime anime="fadeUp" delay={0.35} className="page-head-desc">
             <p>
-              Our analytical operations are traceable through acalibration standard <br />
+              Our analytical operations are traceable through a calibration standard <br />
               produced to either a recognized international standard <br />
               such as KRISS, NIST, VSL, NPL or a gravimetrically manufactured <br />
               Primary Reference Standard traceable to KRISS standard masses.

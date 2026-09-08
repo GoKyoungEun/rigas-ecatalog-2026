@@ -58,7 +58,7 @@ export default function LaserGasMixtures() {
           </Anime>
           <Anime anime="fadeUp" delay={0.35} className="page-head-desc">
             <p>
-              RIGAS excimer laser gas is used widely includings emiconductor manufacturing process,
+              RIGAS excimer laser gas is used widely including semiconductor manufacturing process,
               medical area or precision process.
             </p>
           </Anime>

@@ -13,7 +13,7 @@ const componentGroups = [
     rows: [[{ label: "Formaldehyde", value: "HCHO" }, null]],
   },
   {
-    label: "SulfurCompounds",
+    label: "Sulfur Compounds",
     rows: [
       [
         {
@@ -54,7 +54,7 @@ const componentGroups = [
     ],
   },
   {
-    label: "AmineCompounds",
+    label: "Amine Compounds",
     rows: [
       [
         {

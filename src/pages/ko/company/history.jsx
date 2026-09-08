@@ -9,7 +9,7 @@ const pageInfo = {
 const historyData = [
   {
     period: "Beginning",
-    range: "1900s - 2000s",
+    range: "1990s - 2000s",
     bar: "linear-gradient(to right, var(--secondary), var(--primary))",
     accent: "#F05264",
     years: [
@@ -18,7 +18,7 @@ const historyData = [
       { year: "2002. 04.", items: ["Appointed as Clean Workplace (Korea Occupational Safety & Health Agency)"] },
       { year: "2001. 09.", items: ["Appointed as Standard Gas Testing Agency by Environmental Technology Development Act (Korea National Institute of Environmental Research)"] },
       { year: "1999. 12.", items: ["Obtained Venture Business Certificate (Small & Medium Business Administration)"] },
-      { year: "1999. 03.", items: ["Obtained Certificated of Gas Analysis and Science Research Institute as Corporate-affiliated Research Institute"] },
+      { year: "1999. 03.", items: ["Obtained certification for the Gas Analysis and Science Research Institute as a corporate-affiliated research institute"] },
       { year: "1998. 09.", items: ["Established a corporation, KS GAS-HITEC Co., Ltd"] },
     ],
   },
@@ -49,7 +49,7 @@ const historyData = [
       { year: "2023. 03.", items: ["Use of ILAC-MRA mark in the field of KOLAS authorized Reference Material Producers"] },
       { year: "2022. 06.", items: ["Selected as 2022 Small Giants by the Ministry of Employment and Labor (2022.05.01~2023.04.30)", "Development of Hydrogen fluoride standard gas for semiconductor"] },
       { year: "2021. 12.", items: ["Developing and supplying HF gas CRM in accordance with ISO 17034, KOLAS"] },
-      { year: "2020. 09.", items: ["Relocating the headquarters"] },
+      { year: "2020. 09.", items: ["Relocated the headquarters"] },
     ],
   },
 ];

@@ -74,7 +74,7 @@ export default function CompanyOverview() {
               </Anime>
               <Anime anime="fadeUp" delay={0.35} className="page-head-desc">
                 <p className="break-keep">
-                  We provides high-accuracy calibration gases and certified reference materials for
+                  We provide high-accuracy calibration gases and certified reference materials for
                   environmental, industrial, and scientific applications. <br />
                   We deliver reliable solutions built on precision manufacturing, continuous
                   innovation, and internationally recognized quality standards.

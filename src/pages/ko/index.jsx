@@ -12,7 +12,7 @@ const companyItems = [
   { num: "02", label: "History", to: "/company/history" },
   { num: "03", label: "Performance", to: "/company/performance" },
   { num: "04", label: "Global Network", to: "/company/global-network" },
-  { num: "05", label: "Manufacturing | Analysis Process", to: "/company/analysis-process" },
+  { num: "05", label: "Manufacturing / Analysis Process", to: "/company/analysis-process" },
 ];
 
 const productItems = [

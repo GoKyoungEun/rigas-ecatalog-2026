@@ -53,7 +53,7 @@ const products = [
     deco: "product/card-deco02.svg",
     submenu: [
       { label: "Laser Gas Mixtures", to: "product/mixed-gas/laser-gas-mixtures" },
-      { label: "Other GasM ixtures", to: "product/mixed-gas/other-gas-mixtures" },
+      { label: "Other Gas Mixtures", to: "product/mixed-gas/other-gas-mixtures" },
     ],
   },
   {
