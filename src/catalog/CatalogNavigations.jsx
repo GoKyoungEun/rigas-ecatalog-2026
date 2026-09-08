@@ -1,6 +1,7 @@
 import { useCatalog } from "./Catalog.context";
 import { Link, useParams } from "react-router-dom";
 import { Lang } from "components/elements";
+import { catalogConfigs } from "configs";
 
 export function CatalogLink({ to, children, className, relative, fromRoot, title }) {
   const { lang } = useParams();
@@ -19,7 +20,7 @@ export function CatalogLink({ to, children, className, relative, fromRoot, title
     href = to?.startsWith("../") ? to : `./${to || ""}`;
   } else {
     // 기본적으로 현재 언어를 포함한 경로 사용
-    const currentLang = lang || 'ko';
+    const currentLang = catalogConfigs.langSet.includes(lang) ? lang : catalogConfigs.langSet[0];
     const path = to?.startsWith("/") ? to : `/${to || ""}`;
     href = `/${currentLang}${path}`;
   }

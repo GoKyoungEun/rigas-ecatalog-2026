@@ -5,9 +5,8 @@ import {
   CatalogAutoplayButton,
   CatalogPagingButton,
 } from "catalog/CatalogNavigations";
-import { PageIndex } from "catalog/Catalog.context";
 import { useLocation, useParams } from "react-router-dom";
-import { Image, Lang } from "components/elements";
+import { Image } from "components/elements";
 
 const headerSubmenus = {
   company: [
@@ -27,7 +26,7 @@ const headerSubmenus = {
 };
 
 export default function GlobalNavigation() {
-  const { lang, pageSlug1, pageSlug2 } = useParams();
+  const { pageSlug1, pageSlug2 } = useParams();
   const { pathname } = useLocation();
   const [openSection, setOpenSection] = useState(null);
 
@@ -96,16 +95,6 @@ export default function GlobalNavigation() {
             </nav>
 
             <div className="rigas-header-utils">
-              {/* <CatalogLink
-                className="lang-btn"
-                to={(() => {
-                  const targetLang = lang === "ko" ? "en" : "ko";
-                  return `/${targetLang}/intro`;
-                })()}
-                fromRoot={true}
-              >
-                <Lang content={{ en: "KOR", ko: "ENG" }} />
-              </CatalogLink> */}
               <CatalogAutoplayButton
                 className="rigas-header-autoplay"
                 aria-label="Autoplay"

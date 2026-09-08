@@ -16,7 +16,7 @@ function Page() {
   return <><GlobalNavigation /><output data-testid="path">{pathname}</output></>;
 }
 
-function setup(path = "/ko/product/standard-gas/atmospheric-standards") {
+function setup(path = "/en/product/standard-gas/atmospheric-standards") {
   render(
     <MemoryRouter initialEntries={[path]}>
       <Routes>
@@ -34,11 +34,11 @@ test("hover opens the current section and keeps it open over the submenu", () =>
   const submenu = screen.getByRole("navigation", { name: "Product navigation" });
   expect(header).toHaveClass("rigas-header-wrap--expanded");
   expect(within(submenu).getAllByRole("link").map((link) => link.getAttribute("href"))).toEqual([
-    "/ko/product/traceability",
-    "/ko/product/standard-gas/atmospheric-standards",
-    "/ko/product/mixed-gas/laser-gas-mixtures",
-    "/ko/product/rigas-one/rigas-one",
-    "/ko/product/regulator",
+    "/en/product/traceability",
+    "/en/product/standard-gas/atmospheric-standards",
+    "/en/product/mixed-gas/laser-gas-mixtures",
+    "/en/product/rigas-one/rigas-one",
+    "/en/product/regulator",
   ]);
   fireEvent.mouseEnter(submenu);
   expect(submenu).toBeVisible();
@@ -51,7 +51,7 @@ test("Company hover switches to the current company pages", () => {
   fireEvent.mouseOver(screen.getByRole("link", { name: "Company" }));
   const submenu = screen.getByRole("navigation", { name: "Company navigation" });
   expect(within(submenu).getAllByRole("link")).toHaveLength(5);
-  expect(within(submenu).getByText("Performance")).toHaveAttribute("href", "/ko/company/performance");
+  expect(within(submenu).getByText("Performance")).toHaveAttribute("href", "/en/company/performance");
   expect(screen.queryByRole("navigation", { name: "Product navigation" })).not.toBeInTheDocument();
 });
 
@@ -59,7 +59,7 @@ test("submenu navigation changes the route and closes the menu", () => {
   const header = setup();
   fireEvent.mouseEnter(header);
   fireEvent.click(screen.getByRole("link", { name: "Regulator" }));
-  expect(screen.getByTestId("path")).toHaveTextContent("/ko/product/regulator");
+  expect(screen.getByTestId("path")).toHaveTextContent("/en/product/regulator");
   expect(header).not.toHaveClass("rigas-header-wrap--expanded");
   expect(screen.queryByRole("navigation", { name: "Product navigation" })).not.toBeInTheDocument();
 });
@@ -74,7 +74,7 @@ test("keyboard focus opens the menu and Escape closes it", () => {
 });
 
 test("last page retains its minimal header without a submenu", () => {
-  const header = setup("/ko/last");
+  const header = setup("/en/last");
   fireEvent.mouseEnter(header);
   expect(header).not.toHaveClass("rigas-header-wrap--expanded");
   expect(screen.queryByRole("navigation", { name: "Company navigation", hidden: true })).not.toBeInTheDocument();

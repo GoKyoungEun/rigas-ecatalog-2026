@@ -1,9 +1,9 @@
 export const catalogConfigs = {
   title: {
-    default: "SUNGWONind",
-    ko: "RIGAS",
+    default: "RIGAS",
+    en: "RIGAS",
   },
-  langSet: ["ko", "en"],
+  langSet: ["en"],
   pageMap: [
     "intro",
     "index",

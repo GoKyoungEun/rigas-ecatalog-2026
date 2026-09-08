@@ -17,9 +17,9 @@ export const CatalogProvider = ({ children }) => {
   const { pathname } = useLocation();
   const { lang, pageSlug1, pageSlug2, pageSlug3 } = useParams();
   const { langSet, pageMap, breakpoint } = configs;
+  const currentLang = langSet.includes(lang) ? lang : langSet[0];
 
   const pageFlatMap = useMemo(() => flattenPages(pageMap), [pageMap]);
-  const defaultPath = `/${lang || langSet[0]}/${pageFlatMap[0]}`;
   
   // 경로 파싱 개선
   let curPagePath;
@@ -110,9 +110,9 @@ export const CatalogProvider = ({ children }) => {
       }
 
       console.log('paging - action:', action, 'pageIndex:', pageIndex, 'targetPage:', targetPage, 'pageFlatMap:', pageFlatMap);
-      if (targetPage) navigate(`/${lang}/${targetPage}`);
+      if (targetPage) navigate(`/${currentLang}/${targetPage}`);
     },
-    [lang, pageIndex, pageFlatMap, navigate],
+    [currentLang, pageIndex, pageFlatMap, navigate],
   );
 
   const [isResponsive, setIsResponsive] = useState(false);
@@ -133,15 +133,13 @@ export const CatalogProvider = ({ children }) => {
   }, [breakpoint]);
 
   useEffect(() => {
-    // 언어가 유효하고 pageSlug1만 없는 경우 (예: /en/ -> /en/cover)
-    if (lang && langSet.includes(lang) && !pageSlug1) {
-      navigate(`/${lang}/${pageFlatMap[0]}`);
+    // 이전 언어 주소도 유효한 페이지 경로를 유지하면서 지원 언어로 교정한다.
+    const targetPage = pageFlatMap.includes(curPagePath) ? curPagePath : pageFlatMap[0];
+    const targetPath = `/${currentLang}/${targetPage}`;
+    if (pathname !== targetPath) {
+      navigate(targetPath, { replace: true });
     }
-    // 언어가 없거나 유효하지 않거나, 경로가 유효하지 않은 경우
-    else if (!lang || !langSet.includes(lang) || (pageSlug1 && !pageFlatMap.includes(curPagePath))) {
-      navigate(defaultPath);
-    }
-  }, [lang, curPagePath, defaultPath, langSet, pageFlatMap, pageSlug1]);
+  }, [currentLang, curPagePath, pathname, pageFlatMap, navigate]);
 
   useEffect(() => {
     const handleKeyDown = (e) => {
@@ -219,7 +217,7 @@ export const CatalogProvider = ({ children }) => {
     <CatalogContext.Provider
       value={{
         configs,
-        lang,
+        lang: currentLang,
         pageSlug1,
         pageIndex,
         autoplayState,
