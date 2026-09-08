@@ -5,6 +5,7 @@ import ProductCover from "./cover";
 import ProductStandardGas from "./standard-gas";
 import ProductMixedGas from "./mixed-gas";
 import ProductRigasOne from "./rigas-one";
+import ProductRegulator from "./regulator";
 const pageInfo = {
   depth1: "product",
   depth2: "",
@@ -15,14 +16,15 @@ export default function Product() {
     <div className="contents-wrap">
       <Sluger
         routes={[
-            { path: "traceability", element: <ProductTraceability /> },
-            { path: "cover", element: <ProductCover /> },
-            { path: "standard-gas", element: <ProductStandardGas /> },
-            { path: "mixed-gas", element: <ProductMixedGas /> },
-            { path: "rigas-one", element: <ProductRigasOne /> },
+          { path: "traceability", element: <ProductTraceability /> },
+          { path: "cover", element: <ProductCover /> },
+          { path: "standard-gas", element: <ProductStandardGas /> },
+          { path: "mixed-gas", element: <ProductMixedGas /> },
+          { path: "rigas-one", element: <ProductRigasOne /> },
+          { path: "regulator", element: <ProductRegulator /> },
         ]}
         slug="pageSlug2"
-        />
+      />
     </div>
   );
 }

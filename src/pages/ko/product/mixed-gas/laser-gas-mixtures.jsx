@@ -46,7 +46,7 @@ export default function LaserGasMixtures() {
       <div className="bg">
         <Image src="product/mixed-gas-bg1.jpg" alt="" />
       </div>
-      <Anime anime="fadeIn" delay={0.3} className="product-detail-visual">
+      <Anime anime="fadeRight" delay={0.3} className="product-detail-visual">
         <Image src="product/mixed-gas-img1.png" alt="" />
       </Anime>
 
@@ -58,15 +58,23 @@ export default function LaserGasMixtures() {
           </Anime>
           <Anime anime="fadeUp" delay={0.35} className="page-head-desc">
             <p>
-              RIGAS excimer laser gas is used widely includings emiconductor manufacturing process, medical area or
-              precision process.
+              RIGAS excimer laser gas is used widely includings emiconductor manufacturing process,
+              medical area or precision process.
             </p>
           </Anime>
         </div>
 
         <Anime anime="fadeUp" delay={0.5} className="product-detail-body">
           <div className="spec-section">
-            <Tabs tabs={[{ key: "components", label: "Components", content: <CategoryList groups={componentGroups} /> }]} />
+            <Tabs
+              tabs={[
+                {
+                  key: "components",
+                  label: "Components",
+                  content: <CategoryList groups={componentGroups} />,
+                },
+              ]}
+            />
           </div>
 
           <div className="spec-section">

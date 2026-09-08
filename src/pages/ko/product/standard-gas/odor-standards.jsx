@@ -16,12 +16,40 @@ const componentGroups = [
     label: "SulfurCompounds",
     rows: [
       [
-        { label: "Hydrogen sulfide", value: <>H<sub>2</sub>S</> },
-        { label: "Methyl mercaptan", value: <>CH<sub>3</sub>SH</> },
+        {
+          label: "Hydrogen sulfide",
+          value: (
+            <>
+              H<sub>2</sub>S
+            </>
+          ),
+        },
+        {
+          label: "Methyl mercaptan",
+          value: (
+            <>
+              CH<sub>3</sub>SH
+            </>
+          ),
+        },
       ],
       [
-        { label: "Dimethyl sulfide", value: <>(CH<sub>3</sub>)<sub>2</sub>S</> },
-        { label: "Dimethyl disulfide", value: <>(CH<sub>3</sub>)<sub>2</sub>S<sub>2</sub></> },
+        {
+          label: "Dimethyl sulfide",
+          value: (
+            <>
+              (CH<sub>3</sub>)<sub>2</sub>S
+            </>
+          ),
+        },
+        {
+          label: "Dimethyl disulfide",
+          value: (
+            <>
+              (CH<sub>3</sub>)<sub>2</sub>S<sub>2</sub>
+            </>
+          ),
+        },
       ],
     ],
   },
@@ -29,8 +57,22 @@ const componentGroups = [
     label: "AmineCompounds",
     rows: [
       [
-        { label: "Ammonia", value: <>NH<sub>3</sub></> },
-        { label: "Trimethyl amine", value: <>(CH<sub>3</sub>)<sub>3</sub>N</> },
+        {
+          label: "Ammonia",
+          value: (
+            <>
+              NH<sub>3</sub>
+            </>
+          ),
+        },
+        {
+          label: "Trimethyl amine",
+          value: (
+            <>
+              (CH<sub>3</sub>)<sub>3</sub>N
+            </>
+          ),
+        },
       ],
     ],
   },
@@ -38,36 +80,126 @@ const componentGroups = [
     label: "Aldehydes",
     rows: [
       [
-        { label: "Acetaldehyde", value: <>CH<sub>3</sub>CHO</> },
-        { label: "Propionaldehyde", value: <>C<sub>2</sub>H<sub>5</sub>CHO</> },
+        {
+          label: "Acetaldehyde",
+          value: (
+            <>
+              CH<sub>3</sub>CHO
+            </>
+          ),
+        },
+        {
+          label: "Propionaldehyde",
+          value: (
+            <>
+              C<sub>2</sub>H<sub>5</sub>CHO
+            </>
+          ),
+        },
       ],
       [
-        { label: "n-Butyraldehyde", value: <>n-C<sub>3</sub>H<sub>7</sub>CHO</> },
-        { label: "n-Valeraldehyde", value: <>n-C<sub>4</sub>H<sub>9</sub>CHO</> },
+        {
+          label: "n-Butyraldehyde",
+          value: (
+            <>
+              n-C<sub>3</sub>H<sub>7</sub>CHO
+            </>
+          ),
+        },
+        {
+          label: "n-Valeraldehyde",
+          value: (
+            <>
+              n-C<sub>4</sub>H<sub>9</sub>CHO
+            </>
+          ),
+        },
       ],
-      [{ label: "iso-Valeraldehyde", value: <>iso-C<sub>4</sub>H<sub>9</sub>CHO</> }, null],
+      [
+        {
+          label: "iso-Valeraldehyde",
+          value: (
+            <>
+              iso-C<sub>4</sub>H<sub>9</sub>CHO
+            </>
+          ),
+        },
+        null,
+      ],
     ],
   },
   {
     label: "Alcohol & Ketones",
     rows: [
       [
-        { label: "iso-Butyl alcohol", value: <>iso-C<sub>4</sub>H<sub>9</sub>OH</> },
-        { label: "Ethyl acetate", value: <>CH<sub>3</sub>CO<sub>2</sub>C<sub>2</sub>H<sub>5</sub></> },
+        {
+          label: "iso-Butyl alcohol",
+          value: (
+            <>
+              iso-C<sub>4</sub>H<sub>9</sub>OH
+            </>
+          ),
+        },
+        {
+          label: "Ethyl acetate",
+          value: (
+            <>
+              CH<sub>3</sub>CO<sub>2</sub>C<sub>2</sub>H<sub>5</sub>
+            </>
+          ),
+        },
       ],
-      [{ label: "Methyl isobutyl ketone", value: <>C<sub>4</sub>H<sub>9</sub>COCH<sub>3</sub></> }, null],
+      [
+        {
+          label: "Methyl isobutyl ketone",
+          value: (
+            <>
+              C<sub>4</sub>H<sub>9</sub>COCH<sub>3</sub>
+            </>
+          ),
+        },
+        null,
+      ],
     ],
   },
   {
     label: "BTEXS",
     rows: [
       [
-        { label: "Toluene", value: <>C<sub>7</sub>H<sub>8</sub></> },
-        { label: "Styrene", value: <>C<sub>8</sub>H<sub>8</sub></> },
+        {
+          label: "Toluene",
+          value: (
+            <>
+              C<sub>7</sub>H<sub>8</sub>
+            </>
+          ),
+        },
+        {
+          label: "Styrene",
+          value: (
+            <>
+              C<sub>8</sub>H<sub>8</sub>
+            </>
+          ),
+        },
       ],
       [
-        { label: "p-Xylene", value: <>p-C<sub>6</sub>H<sub>4</sub>C<sub>2</sub>H<sub>6</sub></> },
-        { label: "Propionic acid", value: <>C<sub>2</sub>H<sub>5</sub>CO<sub>2</sub>H</> },
+        {
+          label: "p-Xylene",
+          value: (
+            <>
+              p-C<sub>6</sub>H<sub>4</sub>C<sub>2</sub>H<sub>6</sub>
+            </>
+          ),
+        },
+        {
+          label: "Propionic acid",
+          value: (
+            <>
+              C<sub>2</sub>H<sub>5</sub>CO<sub>2</sub>H
+            </>
+          ),
+        },
       ],
     ],
   },
@@ -75,10 +207,34 @@ const componentGroups = [
     label: "Acids",
     rows: [
       [
-        { label: "n-Butyric acid", value: <>n-C<sub>3</sub>H<sub>7</sub>CO<sub>2</sub>H</> },
-        { label: "n-Valeric acid", value: <>n-C<sub>4</sub>H<sub>9</sub>CO<sub>2</sub>H</> },
+        {
+          label: "n-Butyric acid",
+          value: (
+            <>
+              n-C<sub>3</sub>H<sub>7</sub>CO<sub>2</sub>H
+            </>
+          ),
+        },
+        {
+          label: "n-Valeric acid",
+          value: (
+            <>
+              n-C<sub>4</sub>H<sub>9</sub>CO<sub>2</sub>H
+            </>
+          ),
+        },
       ],
-      [{ label: "iso-Valeric acid", value: <>iso-C<sub>4</sub>H<sub>9</sub>CO<sub>2</sub>H</> }, null],
+      [
+        {
+          label: "iso-Valeric acid",
+          value: (
+            <>
+              iso-C<sub>4</sub>H<sub>9</sub>CO<sub>2</sub>H
+            </>
+          ),
+        },
+        null,
+      ],
     ],
   },
 ];
@@ -88,8 +244,26 @@ const componentColWidths = ["18%", "20%", "20%", "20%", "22%"];
 const mixtureGroups = [
   { label: "Components & Matrix", rowSpan: 2 },
   { label: "Nominal Fraction Range", colSpan: 3 },
-  { label: <>Urel<br />(k=2) %</>, rowSpan: 2 },
-  { label: <>Shelf<br />(year)</>, rowSpan: 2 },
+  {
+    label: (
+      <>
+        Urel
+        <br />
+        (k=2) %
+      </>
+    ),
+    rowSpan: 2,
+  },
+  {
+    label: (
+      <>
+        Shelf
+        <br />
+        (year)
+      </>
+    ),
+    rowSpan: 2,
+  },
 ];
 
 const mixtureSubHeaders = ["From", "To", "Unit"];
@@ -119,7 +293,7 @@ export default function OdorStandards() {
       <div className="bg">
         <Image src="product/standard-gas-bg4.jpg" alt="" />
       </div>
-      <Anime anime="fadeIn" delay={0.3} className="product-detail-visual">
+      <Anime anime="fadeRight" delay={0.3} className="product-detail-visual">
         <Image src="product/standard-gas-img4.png" alt="" />
       </Anime>
 
@@ -132,8 +306,8 @@ export default function OdorStandards() {
           <Anime anime="fadeUp" delay={0.35} className="page-head-desc">
             <p>
               This is RIGAS standard gas for detecting and measuring odor. <br />
-              Odor is caused by one or more volatile chemical materials in low density generally, which is recognized by
-              human or animals.
+              Odor is caused by one or more volatile chemical materials in low density generally,
+              which is recognized by human or animals.
             </p>
           </Anime>
         </div>
@@ -145,7 +319,9 @@ export default function OdorStandards() {
                 key: "components",
                 label: "Components",
                 scrollable: true,
-                content: <GroupedSpecTable groups={componentGroups} colWidths={componentColWidths} />,
+                content: (
+                  <GroupedSpecTable groups={componentGroups} colWidths={componentColWidths} />
+                ),
               },
               {
                 key: "mixture",

@@ -45,7 +45,7 @@ export default function RigasOne() {
       <div className="bg">
         <Image src="product/rigas-one-bg.jpg" alt="" />
       </div>
-      <Anime anime="fadeIn" delay={0.3} className="product-detail-visual">
+      <Anime anime="fadeRight" delay={0.3} className="product-detail-visual">
         <Image src="product/rigas-one-img.png" alt="" />
       </Anime>
 

@@ -8,17 +8,56 @@ const pageInfo = {
 };
 
 const components = [
-  { label: "Carbon dioxide", value: <>CO<sub>2</sub></> },
+  {
+    label: "Carbon dioxide",
+    value: (
+      <>
+        CO<sub>2</sub>
+      </>
+    ),
+  },
   { label: "Carbon monoxide", value: "CO" },
-  { label: "Propane", value: <>C<sub>3</sub>H<sub>8</sub></> },
-  { label: "Oxygen", value: <>O<sub>2</sub></> },
+  {
+    label: "Propane",
+    value: (
+      <>
+        C<sub>3</sub>H<sub>8</sub>
+      </>
+    ),
+  },
+  {
+    label: "Oxygen",
+    value: (
+      <>
+        O<sub>2</sub>
+      </>
+    ),
+  },
 ];
 
 const mixtureGroups = [
   { label: "Components & Matrix", rowSpan: 2 },
   { label: "Nominal Fraction Range", colSpan: 3 },
-  { label: <>Urel<br />(k=2) %</>, rowSpan: 2 },
-  { label: <>Shelf<br />(year)</>, rowSpan: 2 },
+  {
+    label: (
+      <>
+        Urel
+        <br />
+        (k=2) %
+      </>
+    ),
+    rowSpan: 2,
+  },
+  {
+    label: (
+      <>
+        Shelf
+        <br />
+        (year)
+      </>
+    ),
+    rowSpan: 2,
+  },
 ];
 
 const mixtureSubHeaders = ["From", "To", "Unit"];
@@ -53,7 +92,7 @@ export default function AutomobileExhaustStandards() {
       <div className="bg">
         <Image src="product/standard-gas-bg2.jpg" alt="" />
       </div>
-      <Anime anime="fadeIn" delay={0.3} className="product-detail-visual">
+      <Anime anime="fadeRight" delay={0.3} className="product-detail-visual">
         <Image src="product/standard-gas-img2.png" alt="" />
       </Anime>
 
@@ -65,8 +104,9 @@ export default function AutomobileExhaustStandards() {
           </Anime>
           <Anime anime="fadeUp" delay={0.35} className="page-head-desc">
             <p>
-              High-precision gas standards for accurate vehicle emissions testing. Designed to support calibration, analysis,
-              and regulatory compliance. Reliable mixtures ensure consistent results across automotive applications.
+              High-precision gas standards for accurate vehicle emissions testing. Designed to
+              support calibration, analysis, and regulatory compliance. Reliable mixtures ensure
+              consistent results across automotive applications.
             </p>
           </Anime>
         </div>

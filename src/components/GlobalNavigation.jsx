@@ -12,14 +12,21 @@ export default function GlobalNavigation() {
   const { lang, pageSlug1, pageSlug2 } = useParams();
 
   const isIndexPage = pageSlug1 === "index";
+  const isLastPage = pageSlug1 === "last";
   const isCompanySection = pageSlug1 === "company";
   const isProductSection = pageSlug1 === "product";
-  const showHeader = pageSlug1 !== "intro" && pageSlug1 !== "last";
+  const showHeader = pageSlug1 !== "intro";
 
   return (
     <div className="pointer-events-none absolute left-0 top-0 z-[9999] h-full w-full">
       {showHeader && (
-        <div className={twMerge("rigas-header-wrap pointer-events-auto", isIndexPage && "rigas-header-wrap--index")}>
+        <div
+          className={twMerge(
+            "rigas-header-wrap pointer-events-auto",
+            isIndexPage && "rigas-header-wrap--index",
+            isLastPage && "rigas-header-wrap--last",
+          )}
+        >
           <header className="rigas-header">
             <CatalogLink to="/intro" className="rigas-header-logo">
               <Image src="logo.svg" alt="RIGAS" />
@@ -79,8 +86,13 @@ export default function GlobalNavigation() {
         </div>
       )}
 
-      {!((pageSlug1 === "intro") || pageSlug1 === "last") && (
-        <div className={twMerge("paging-box flex items-center w-[272px] *:pointer-events-auto", !(pageSlug1 === "cover" && pageSlug2 === "intro") && "paging-bg")}>
+      {pageSlug1 !== "intro" && (
+        <div
+          className={twMerge(
+            "paging-box flex items-center w-[272px] *:pointer-events-auto",
+            !(pageSlug1 === "cover" && pageSlug2 === "intro") && !isLastPage && "paging-bg",
+          )}
+        >
           <CatalogPagingButton
             direction="prev"
             className={twMerge("paging-prev", !(pageSlug1 === "cover" && pageSlug2 === "intro") && "disabled:opacity-50", (pageSlug1 === "cover" && pageSlug2 === "intro") && "opacity-0")}

@@ -45,9 +45,13 @@ export default function CompanyGlobalNetwork() {
           </Anime>
           <Anime anime="fadeUp" delay={0.35} className="page-head-desc">
             <p>
-              With a 70% market share in Korea, RIGAS leads the market in standard gases.<br />
-              As a trusted partner, RIGAS continues to strengthen its position as a Key Manufacturer.<br />
-              Expanding our presence in the global market, we are supplying products to more than 40 countries worldwide.
+              With a 70% market share in Korea, RIGAS leads the market in standard gases.
+              <br />
+              As a trusted partner, RIGAS continues to strengthen its position as a Key
+              Manufacturer.
+              <br />
+              Expanding our presence in the global market, we are supplying products to more than 40
+              countries worldwide.
             </p>
           </Anime>
         </div>
@@ -71,7 +75,7 @@ export default function CompanyGlobalNetwork() {
         </div>
       </Anime>
 
-      <Anime anime="fadeIn" delay={0.45} className="global-network-visual">
+      <Anime anime="scaleUp" delay={0.45} className="global-network-visual">
         <GlobeNetwork className="global-network-globe" />
       </Anime>
     </CatalogPage>

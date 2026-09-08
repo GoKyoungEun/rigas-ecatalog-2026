@@ -32,11 +32,12 @@ export const catalogConfigs = {
         },
         {
           name: "rigas-one",
-          outlets: ["rigas-one"],
+          outlets: ["rigas-one", "pams", "to-14a"],
         },
+        "regulator",
       ],
     },
-    "last"
+    "last",
   ],
   autoplay: {
     delay: 4000,

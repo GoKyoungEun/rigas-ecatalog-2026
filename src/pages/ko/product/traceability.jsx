@@ -7,12 +7,48 @@ const pageInfo = {
 };
 
 const nodes = [
-  { key: "si", title: "SI", sub: "International System of Units", delay: 0.6 },
-  { key: "ilac", title: "ILAC", sub: "International System", delay: 0.7 },
-  { key: "bipm", title: "BIPM", sub: "International System", delay: 0.75 },
-  { key: "apac", title: "APAC", sub: "Reginal Cooperation", delay: 0.8 },
-  { key: "nmis", title: "NMIS", sub: "KRISS / NIST/ NPL / VSL", delay: 0.85 },
-  { key: "kolas", title: "KOLAS", sub: "ISO17034", delay: 0.9 },
+  {
+    key: "si",
+    title: "SI",
+    sub: "International System of Units",
+    delay: 0.6,
+    anime: { default: "fadeDown", mobile: "fadeUp" },
+  },
+  {
+    key: "ilac",
+    title: "ILAC",
+    sub: "International System",
+    delay: 0.7,
+    anime: { default: "fadeLeft", mobile: "fadeUp" },
+  },
+  {
+    key: "bipm",
+    title: "BIPM",
+    sub: "International System",
+    delay: 0.75,
+    anime: { default: "fadeRight", mobile: "fadeUp" },
+  },
+  {
+    key: "apac",
+    title: "APAC",
+    sub: "Reginal Cooperation",
+    delay: 0.8,
+    anime: { default: "fadeLeft", mobile: "fadeUp" },
+  },
+  {
+    key: "nmis",
+    title: "NMIS",
+    sub: "KRISS / NIST/ NPL / VSL",
+    delay: 0.85,
+    anime: { default: "fadeRight", mobile: "fadeUp" },
+  },
+  {
+    key: "kolas",
+    title: "KOLAS",
+    sub: "ISO17034",
+    delay: 0.9,
+    anime: { default: "fadeLeft", mobile: "fadeUp" },
+  },
 ];
 
 export default function ProductTraceability() {
@@ -37,7 +73,6 @@ export default function ProductTraceability() {
             </p>
           </Anime>
         </div>
-
       </div>
 
       <Anime anime="fadeIn" delay={0.5} className="traceability-lines">
@@ -47,7 +82,7 @@ export default function ProductTraceability() {
       {nodes.map((node) => (
         <Anime
           key={node.key}
-          anime="fadeIn"
+          anime={node.anime}
           delay={node.delay}
           className={`traceability-node traceability-node--${node.key}`}
         >

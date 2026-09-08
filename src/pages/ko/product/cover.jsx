@@ -28,11 +28,23 @@ const products = [
     desc: "Certified calibration gases designed to ensure accurate measurement, analysis, and instrument performance.",
     deco: "product/card-deco01.svg",
     submenu: [
-      { label: "Atmospheric Environmental Calibration Standards", to: "product/standard-gas/atmospheric-standards" },
-      { label: "Automobile Exhaust Gas Standards", to: "product/standard-gas/automobile-exhaust-standards" },
-      { label: "Petrochemical and Natural Gas Standards", to: "product/standard-gas/petrochemical-natural-gas-standards" },
+      {
+        label: "Atmospheric Environmental Calibration Standards",
+        to: "product/standard-gas/atmospheric-standards",
+      },
+      {
+        label: "Automobile Exhaust Gas Standards",
+        to: "product/standard-gas/automobile-exhaust-standards",
+      },
+      {
+        label: "Petrochemical and Natural Gas Standards",
+        to: "product/standard-gas/petrochemical-natural-gas-standards",
+      },
       { label: "Odor Standards", to: "product/standard-gas/odor-standards" },
-      { label: "Volatile Organic Compound Standards(VOCs)", to: "product/standard-gas/voc-standards" },
+      {
+        label: "Volatile Organic Compound Standards(VOCs)",
+        to: "product/standard-gas/voc-standards",
+      },
     ],
   },
   {
@@ -50,15 +62,15 @@ const products = [
     deco: "product/card-deco04.svg",
     submenu: [
       { label: "rigas | ONE", to: "product/rigas-one/rigas-one" },
-      { label: "PAMS", to: "#" },
-      { label: "TO-14A", to: "#" },
+      { label: "PAMS", to: "product/rigas-one/pams" },
+      { label: "TO-14A", to: "product/rigas-one/to-14a" },
     ],
   },
   {
     title: "Regulator",
     desc: "High-performance regulators that provide precise pressure control and stable gas flow.",
     deco: "product/card-deco06.svg",
-    to: "/product/regulator",
+    to: "product/regulator",
     submenu: [],
   },
 ];
@@ -87,7 +99,8 @@ export default function ProductCover() {
           <p>
             RIGAS offers a comprehensive range of calibration gases and reference materials.
             <br />
-            Our solutions are designed to deliver accuracy, reliability, and traceability across diverse industries.
+            Our solutions are designed to deliver accuracy, reliability, and traceability across
+            diverse industries.
           </p>
         </Anime>
       </section>
@@ -122,7 +135,11 @@ export default function ProductCover() {
                       <li key={sub.label}>
                         <CatalogLink to={sub.to} className="product-cover-submenu-link">
                           <span>{sub.label}</span>
-                          <Image src="product/arrow-right.svg" alt="" className="product-cover-submenu-arrow" />
+                          <Image
+                            src="product/arrow-right.svg"
+                            alt=""
+                            className="product-cover-submenu-arrow"
+                          />
                         </CatalogLink>
                       </li>
                     ))}

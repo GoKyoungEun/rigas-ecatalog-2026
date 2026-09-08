@@ -1,53 +1,82 @@
-import { twMerge } from "tailwind-merge";
 import { CatalogPage } from "catalog/CatalogPage";
-import { CatalogLink } from "catalog/CatalogNavigations";
-import { Anime, Image, Video, } from "components/elements";
+import { Anime, Image } from "components/elements";
 
 const pageInfo = {
   depth1: "last",
   depth2: "",
 };
 
+const contacts = [
+  {
+    type: "Domestic",
+    tel: "+82-42-5031-6962",
+    fax: "+82-42-935-8814",
+    email: "master@rigas.co.kr",
+  },
+  {
+    type: "Overseas",
+    tel: "+82-70-5031-6962",
+    fax: "+82-42-935-8814",
+    email: "sales@rigas.co.kr",
+  },
+];
+
+function LinkArrow() {
+  return (
+    <svg width="9" height="15" viewBox="0 0 9 15" aria-hidden="true">
+      <path d="m1 1 6.3 6.3L1 13.6" fill="none" stroke="currentColor" strokeWidth="2" />
+    </svg>
+  );
+}
+
 export default function Last() {
   return (
-    <CatalogPage pageInfo={pageInfo} id="last" className="wrap header--nologo header--nognb">
-      <Anime
-        anime={{
-          default: "fadeIn",
-        }}
-        delay={0}
-        className="w-full h-[610px] flex items-center justify-center mo:h-[30vh]"
-      >
-        <Image src="last-logo.svg" className="w-[530px] mo:w-[70%]" />
+    <CatalogPage pageInfo={pageInfo} id="last" className="last-page">
+      <Anime anime="fadeIn" delay={0.1} className="last-logo">
+        <Image src="last-logo.svg" alt="RIGAS Research Institute of Gas Analytical Science" />
       </Anime>
-      <Anime
-        anime={{
-          default: "fadeUp",
-        }}
-        delay={0}
-        className="w-full last-info"
-      >
+
+      <Anime anime="fadeUp" delay={0.25} className="last-info">
         <h2>We Make Standard</h2>
-        <span className="bar"></span>
+        <span className="bar" aria-hidden="true" />
+
         <div className="inner">
           <div className="info-box">
-            <p>(34323) 17, Daedeokdae-ro 1284beon-gil, Daedeok-gu, Daejeon, Korea(South) </p>
-            <p><span>TEL : </span>+82-70-5031-6962</p>
-            <p><span>FAX : </span>+82-42-935-8814</p>
-            <p><span>EMAIL : </span>sales@rigas.co.kr</p>
+            <p className="last-address">
+              (34323) 17, Daedeokdae-ro 1284beon-gil, Daedeok-gu, Daejeon, Korea(South)
+            </p>
+
+            <div className="last-contact-list">
+              {contacts.map((contact) => (
+                <div className="last-contact-row" key={contact.type}>
+                  <strong>{contact.type}</strong>
+                  <p>
+                    <span>TEL :</span> {contact.tel}
+                  </p>
+                  <p>
+                    <span>FAX :</span> {contact.fax}
+                  </p>
+                  <p>
+                    <span>E-MAIL :</span> {contact.email}
+                  </p>
+                </div>
+              ))}
+            </div>
           </div>
+
           <div className="btn-box">
-            <a href="https://rigas.co.kr/en/customer/inquiry.php" target="_blank" className="btn">
+            <a
+              href="https://rigas.co.kr/en/customer/inquiry.php"
+              target="_blank"
+              rel="noreferrer"
+              className="btn"
+            >
               <span>Inquiry</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="8.43" height="14.032" viewBox="0 0 8.43 14.032">
-                <path id="패스_36376" data-name="패스 36376" d="M15247.3,2915.346l6.309,6.309-6.309,6.309" transform="translate(-15246.596 -2914.639)" fill="none" stroke="#e90000" stroke-width="2"/>
-              </svg>
+              <LinkArrow />
             </a>
-            <a href="https://rigas.co.kr/en/" target="_blank" className="btn">
+            <a href="https://rigas.co.kr/en/" target="_blank" rel="noreferrer" className="btn">
               <span>Homepage</span>
-              <svg xmlns="http://www.w3.org/2000/svg" width="8.43" height="14.032" viewBox="0 0 8.43 14.032">
-                <path id="패스_36376" data-name="패스 36376" d="M15247.3,2915.346l6.309,6.309-6.309,6.309" transform="translate(-15246.596 -2914.639)" fill="none" stroke="#e90000" stroke-width="2"/>
-              </svg>
+              <LinkArrow />
             </a>
           </div>
         </div>

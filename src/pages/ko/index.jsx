@@ -20,7 +20,7 @@ const productItems = [
   { num: "02", label: "Standard Gas", to: "/product/standard-gas/atmospheric-standards" },
   { num: "03", label: "Mixed Gas", to: "/product/mixed-gas/laser-gas-mixtures" },
   { num: "04", label: "rigas | ONE", to: "/product/rigas-one/rigas-one" },
-  { num: "05", label: "Regulator", to: "#" },
+  { num: "05", label: "Regulator", to: "/product/regulator" },
 ];
 
 function IndexArrow() {

@@ -10,9 +10,25 @@ const pageInfo = {
 const gasItems = [
   { label: "Illuminating Gas Mixtures", icon: "product/ico-laser-gas-mixtures01.svg" },
   { label: "Toxic Gases", icon: "product/ico-laser-gas-mixtures02.svg" },
-  { label: <>Semiconductor <br />Gas Mixtures</>, icon: "product/ico-laser-gas-mixtures03.svg" },
+  {
+    label: (
+      <>
+        Semiconductor <br />
+        Gas Mixtures
+      </>
+    ),
+    icon: "product/ico-laser-gas-mixtures03.svg",
+  },
   { label: "Rare Gases", icon: "product/ico-laser-gas-mixtures04.svg" },
-  { label: <>Research and <br />Development Gas Mixtures</>, icon: "product/ico-laser-gas-mixtures05.svg" },
+  {
+    label: (
+      <>
+        Research and <br />
+        Development Gas Mixtures
+      </>
+    ),
+    icon: "product/ico-laser-gas-mixtures05.svg",
+  },
   { label: "Hydrocarbons", icon: "product/ico-laser-gas-mixtures06.svg" },
   { label: "High Purity Gases", icon: "product/ico-laser-gas-mixtures07.svg" },
   { label: "Etc.", icon: "product/ico-laser-gas-mixtures08.svg" },
@@ -24,7 +40,7 @@ export default function OtherGasMixtures() {
       <div className="bg">
         <Image src="product/mixed-gas-bg2.jpg" alt="" />
       </div>
-      <Anime anime="fadeIn" delay={0.3} className="product-detail-visual">
+      <Anime anime="fadeRight" delay={0.3} className="product-detail-visual">
         <Image src="product/mixed-gas-img2.png" alt="" />
       </Anime>
 
@@ -45,7 +61,9 @@ export default function OtherGasMixtures() {
 
         <Anime anime="fadeUp" delay={0.5} className="product-detail-body">
           <div className="spec-section">
-            <Tabs tabs={[{ key: "gases", label: "Gases", content: <IconCardGrid items={gasItems} /> }]} />
+            <Tabs
+              tabs={[{ key: "gases", label: "Gases", content: <IconCardGrid items={gasItems} /> }]}
+            />
           </div>
         </Anime>
       </div>

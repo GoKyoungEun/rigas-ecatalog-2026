@@ -9,21 +9,74 @@ const pageInfo = {
 
 const components = [
   { label: "Nitric oxide", value: "NO" },
-  { label: "Nitrogen dioxide", value: <>NO<sub>2</sub></> },
-  { label: "Sulfur dioxide", value: <>SO<sub>2</sub></> },
+  {
+    label: "Nitrogen dioxide",
+    value: (
+      <>
+        NO<sub>2</sub>
+      </>
+    ),
+  },
+  {
+    label: "Sulfur dioxide",
+    value: (
+      <>
+        SO<sub>2</sub>
+      </>
+    ),
+  },
   { label: "Carbon monoxide", value: "CO" },
-  { label: "Oxygen", value: <>O<sub>2</sub></> },
+  {
+    label: "Oxygen",
+    value: (
+      <>
+        O<sub>2</sub>
+      </>
+    ),
+  },
   { label: "Hydrogen Chloride", value: "HCl" },
   { label: "Hydrogen fluoride", value: "HF" },
-  { label: "Ammonia", value: <>NH<sub>3</sub></> },
-  { label: "Carbon dioxide", value: <>CO<sub>2</sub></> },
+  {
+    label: "Ammonia",
+    value: (
+      <>
+        NH<sub>3</sub>
+      </>
+    ),
+  },
+  {
+    label: "Carbon dioxide",
+    value: (
+      <>
+        CO<sub>2</sub>
+      </>
+    ),
+  },
 ];
 
 const mixtureGroups = [
   { label: "Components & Matrix", rowSpan: 2 },
   { label: "Nominal Fraction Range", colSpan: 3 },
-  { label: <>Urel<br />(k=2) %</>, rowSpan: 2 },
-  { label: <>Shelf<br />(year)</>, rowSpan: 2 },
+  {
+    label: (
+      <>
+        Urel
+        <br />
+        (k=2) %
+      </>
+    ),
+    rowSpan: 2,
+  },
+  {
+    label: (
+      <>
+        Shelf
+        <br />
+        (year)
+      </>
+    ),
+    rowSpan: 2,
+  },
 ];
 
 const mixtureSubHeaders = ["From", "To", "Unit"];
@@ -45,7 +98,9 @@ const mixtureRows = [
             <span>±1~±3</span>
             <span>1~2</span>
           </div>
-          <div className="spec-table-split-bottom">Determined in accordance with the customer's needs</div>
+          <div className="spec-table-split-bottom">
+            Determined in accordance with the customer's needs
+          </div>
         </div>
       ),
       rowSpan: 3,
@@ -68,7 +123,7 @@ export default function AtmosphericStandards() {
       <div className="bg">
         <Image src="product/standard-gas-bg.png" alt="" />
       </div>
-      <Anime anime="fadeIn" delay={0.3} className="product-detail-visual">
+      <Anime anime="fadeRight" delay={0.3} className="product-detail-visual">
         <Image src="product/standard-gas-img.png" alt="" />
       </Anime>
 
@@ -85,8 +140,10 @@ export default function AtmosphericStandards() {
           <Anime anime="fadeUp" delay={0.35} className="page-head-desc">
             <p>
               Environment is one of critical element affecting to our life. <br />
-              Therefore, accurate standard gas shall be used to monitor and measure industrial effluents. <br />
-              RIGAS Co., Ltd. Provides high accurate calibration standard gas for measuring various environmental pollutants.
+              Therefore, accurate standard gas shall be used to monitor and measure industrial
+              effluents. <br />
+              RIGAS Co., Ltd. Provides high accurate calibration standard gas for measuring various
+              environmental pollutants.
             </p>
           </Anime>
         </div>
