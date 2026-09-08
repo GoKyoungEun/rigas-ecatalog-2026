@@ -1,3 +1,4 @@
+import { useEffect, useState } from "react";
 import { twMerge } from "tailwind-merge";
 import {
   CatalogLink,
@@ -5,11 +6,34 @@ import {
   CatalogPagingButton,
 } from "catalog/CatalogNavigations";
 import { PageIndex } from "catalog/Catalog.context";
-import { useParams } from "react-router-dom";
+import { useLocation, useParams } from "react-router-dom";
 import { Image, Lang } from "components/elements";
+
+const headerSubmenus = {
+  company: [
+    { label: "Overview", to: "/company/overview" },
+    { label: "History", to: "/company/history" },
+    { label: "Performance", to: "/company/performance" },
+    { label: "Global Network", to: "/company/global-network" },
+    { label: "Manufacturing / Analysis Process", to: "/company/analysis-process" },
+  ],
+  product: [
+    { label: "Traceability", to: "/product/traceability" },
+    { label: "Standard Gas", to: "/product/standard-gas/atmospheric-standards" },
+    { label: "Mixed Gas", to: "/product/mixed-gas/laser-gas-mixtures" },
+    { label: "rigas | ONE Series", to: "/product/rigas-one/rigas-one" },
+    { label: "Regulator", to: "/product/regulator" },
+  ],
+};
 
 export default function GlobalNavigation() {
   const { lang, pageSlug1, pageSlug2 } = useParams();
+  const { pathname } = useLocation();
+  const [openSection, setOpenSection] = useState(null);
+
+  useEffect(() => {
+    setOpenSection(null);
+  }, [pathname]);
 
   const isIndexPage = pageSlug1 === "index";
   const isLastPage = pageSlug1 === "last";
@@ -25,22 +49,47 @@ export default function GlobalNavigation() {
             "rigas-header-wrap pointer-events-auto",
             isIndexPage && "rigas-header-wrap--index",
             isLastPage && "rigas-header-wrap--last",
+            openSection && !isLastPage && "rigas-header-wrap--expanded",
           )}
+          onMouseEnter={() => {
+            if (!isLastPage) setOpenSection((current) => current || (isProductSection ? "product" : "company"));
+          }}
+          onMouseLeave={() => setOpenSection(null)}
+          onBlur={(event) => {
+            if (!event.currentTarget.contains(event.relatedTarget)) setOpenSection(null);
+          }}
+          onKeyDown={(event) => {
+            if (event.key === "Escape") {
+              setOpenSection(null);
+              event.stopPropagation();
+              event.currentTarget.querySelector(`.rigas-header-nav-item--${openSection}`)?.focus();
+              setOpenSection(null);
+            }
+          }}
         >
           <header className="rigas-header">
             <CatalogLink to="/intro" className="rigas-header-logo">
               <Image src="logo.svg" alt="RIGAS" />
             </CatalogLink>
 
-            <nav className="rigas-header-nav">
+            <nav className="rigas-header-nav" aria-label="Main navigation"
+              onMouseOver={(event) => {
+                const item = event.target.closest(".rigas-header-nav-item");
+                if (item) setOpenSection(item.classList.contains("rigas-header-nav-item--product") ? "product" : "company");
+              }}
+              onFocus={(event) => {
+                const item = event.target.closest(".rigas-header-nav-item");
+                if (item) setOpenSection(item.classList.contains("rigas-header-nav-item--product") ? "product" : "company");
+              }}
+            >
               <CatalogLink to="/company/overview" className="rigas-header-nav-item rigas-header-nav-item--company">
-                <span className={twMerge("rigas-header-nav-label", isCompanySection && "active")}>
+                <span className={twMerge("rigas-header-nav-label", (openSection ? openSection === "company" : isCompanySection) && "active")}>
                   Company
                 </span>
               </CatalogLink>
               <span className="rigas-header-divider" aria-hidden="true" />
               <CatalogLink to="/product/traceability" className="rigas-header-nav-item rigas-header-nav-item--product">
-                <span className={twMerge("rigas-header-nav-label", isProductSection && "active")}>
+                <span className={twMerge("rigas-header-nav-label", (openSection ? openSection === "product" : isProductSection) && "active")}>
                   Product
                 </span>
               </CatalogLink>
@@ -62,14 +111,16 @@ export default function GlobalNavigation() {
                 aria-label="Autoplay"
                 render={{
                   play: (
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9e9e9e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <polygon points="5 3 19 12 5 21 5 3"></polygon>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                      <circle cx="16" cy="16" r="14" stroke="#fff" strokeWidth="2" />
+                      <polygon points="13 9 22 16 13 23" fill="#fff" />
                     </svg>
                   ),
                   pause: (
-                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#9e9e9e" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <rect x="6" y="4" width="4" height="16"></rect>
-                      <rect x="14" y="4" width="4" height="16"></rect>
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32" fill="none" aria-hidden="true">
+                      <circle cx="16" cy="16" r="14" stroke="#fff" strokeWidth="2" />
+                      <rect x="11" y="10" width="3" height="12" fill="#fff" />
+                      <rect x="18" y="10" width="3" height="12" fill="#fff" />
                     </svg>
                   ),
                 }}
@@ -83,6 +134,25 @@ export default function GlobalNavigation() {
               </CatalogLink>
             </div>
           </header>
+          {!isLastPage && Object.entries(headerSubmenus).map(([section, items]) => (
+            <nav
+              key={section}
+              className="rigas-header-submenu"
+              aria-label={`${section === "product" ? "Product" : "Company"} navigation`}
+              hidden={openSection !== section}
+              onClick={(event) => {
+                if (event.target.closest("a")) setOpenSection(null);
+              }}
+            >
+              <ul>
+                {items.map((item) => (
+                  <li key={item.to}>
+                    <CatalogLink to={item.to}>{item.label}</CatalogLink>
+                  </li>
+                ))}
+              </ul>
+            </nav>
+          ))}
         </div>
       )}
 

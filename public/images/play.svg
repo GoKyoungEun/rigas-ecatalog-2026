@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="31" height="30" viewBox="0 0 31 30">
+  <g id="play" transform="translate(-1787 -25.004)">
+    <path id="다각형_5" data-name="다각형 5" d="M7.61.488a.5.5,0,0,1,.781,0l6.96,8.7a.5.5,0,0,1-.39.812H1.04a.5.5,0,0,1-.39-.812Z" transform="translate(1809 32.004) rotate(90)" fill="#f3f3f3"/>
+    <g id="타원_4" data-name="타원 4" transform="translate(1787 25.004)" fill="none" stroke="#f3f3f3" stroke-width="2">
+      <ellipse cx="15.5" cy="15" rx="15.5" ry="15" stroke="none"/>
+      <ellipse cx="15.5" cy="15" rx="14.5" ry="14" fill="none"/>
+    </g>
+  </g>
+</svg>
