@@ -43,7 +43,7 @@ export default function Last() {
         <div className="inner">
           <div className="info-box">
             <p className="last-address">
-              (34323) 17, Daedeokdae-ro 1284beon-gil, Daedeok-gu, Daejeon, Korea (South)
+              (34326) 17, Daedeokdae-ro 1284beon-gil, Daedeok-gu, Daejeon, Korea(South)
             </p>
 
             <div className="last-contact-list">

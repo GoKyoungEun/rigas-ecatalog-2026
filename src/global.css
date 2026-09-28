@@ -465,7 +465,7 @@ body {
 .traceability-node--bipm {left: 1505px; top: 334px;}
 .traceability-node--nmis {left: 1505px; top: 488px;}
 
-.traceability-circle {position: absolute; z-index: 1; left: 1116px; top: 644px; width: 414px; height: 414px;}
+.traceability-circle {position: absolute; z-index: 1; left: 1116px; top: 658px; width: 414px; height: 414px;}
 .traceability-circle img {width: 100%; height: 100%; display: block;}
 
 @media screen and (max-width: 767px) {
@@ -737,8 +737,8 @@ body {
 .rigas-one-series.product-detail .page-head {gap: 24px;}
 .rigas-one-series .page-head-sbj {font-size: 42px;}
 .rigas-one-series .page-head-desc p {font-size: 18px; line-height: 1.55;}
-.pams57 .product-detail-visual {right: 151px; bottom: 58px; width: 496px;}
-.to14a .product-detail-visual {right: 178px; bottom: 90px; width: 500px;}
+.pams57 .product-detail-visual {right: 73px; bottom: 66px; width: 695px;}
+.to14a .product-detail-visual {right: 165px; bottom: 97px; width: 536px;}
 .rigas-one-series .product-detail-body {width: 1120px; margin-top: 54px;}
 .rigas-one-series .tabs-nav {border-bottom: 2px solid var(--primary);}
 .rigas-one-series .tabs-nav-btn {min-width: 220px; padding-block: 12px;}
