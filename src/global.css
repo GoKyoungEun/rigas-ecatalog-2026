@@ -724,13 +724,13 @@ body {
 
 /* Other Gas Mixtures */
 .other-gas-mixtures.product-detail .page-head {gap: 22px;}
-.other-gas-mixtures .product-detail-visual {right: 180px; bottom: 87px; width: 452px;}
+.other-gas-mixtures .product-detail-visual {right: 159px; bottom: 19px; width: 478px;}
 .other-gas-mixtures .tabs-nav {border-bottom: 2px solid var(--primary); margin-bottom: 29px;}
 .other-gas-mixtures .product-detail-body {margin-top: 99px;}
 .other-gas-mixtures .tabs-nav-btn {cursor: default;}
 
 /* rigas | ONE */
-.rigas-one .product-detail-visual {right: 191px; bottom: 136px; width: 414px;}
+.rigas-one .product-detail-visual {right: 167px; bottom: 92px; width: 447px;}
 .rigas-one .product-detail-body {margin-top: 60px;}
 
 /* rigas | ONE specialty mixtures */
@@ -738,7 +738,7 @@ body {
 .rigas-one-series .page-head-sbj {font-size: 42px;}
 .rigas-one-series .page-head-desc p {font-size: 18px; line-height: 1.55;}
 .pams57 .product-detail-visual {right: 73px; bottom: 66px; width: 695px;}
-.to14a .product-detail-visual {right: 165px; bottom: 97px; width: 536px;}
+.to14a .product-detail-visual {right: 236px; bottom: 84px; width: 383px;}
 .rigas-one-series .product-detail-body {width: 1120px; margin-top: 54px;}
 .rigas-one-series .tabs-nav {border-bottom: 2px solid var(--primary);}
 .rigas-one-series .tabs-nav-btn {min-width: 220px; padding-block: 12px;}

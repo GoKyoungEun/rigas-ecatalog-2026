@@ -66,7 +66,7 @@ export default function CompanyHistory() {
             </Anime>
               <Anime anime="fadeUp" delay={0.35} className="page-head-desc">
                 <p className="break-keep">
-                  RIGAS, Specialized Company on Standard Gas since 1998! <br />
+                  RIGAS, Specialized Company on Standard Gas since 1998. <br />
                   We produce a variety of standard gas with over 650,000 permits.
                 </p>
               </Anime>
