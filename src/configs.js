@@ -20,10 +20,14 @@ export const catalogConfigs = {
           name: "standard-gas",
           outlets: [
             "atmospheric-standards",
+            "atmospheric-standards-mixture",
             "automobile-exhaust-standards",
             "petrochemical-natural-gas-standards",
+            "petrochemical-natural-gas-standards-mixture",
             "odor-standards",
+            "odor-standards-mixture",
             "voc-standards",
+            "voc-standards-mixture",
           ],
         },
         {
@@ -32,9 +36,17 @@ export const catalogConfigs = {
         },
         {
           name: "rigas-one",
-          outlets: ["rigas-one", "pams", "to-14a"],
+          outlets: [
+            "rigas-one",
+            "rigas-one-reactive",
+            "pams",
+            "pams-chromatogram",
+            "to-14a",
+            "to-14a-chromatogram",
+          ],
         },
         "regulator",
+        "regulator-other-information",
       ],
     },
     "last",

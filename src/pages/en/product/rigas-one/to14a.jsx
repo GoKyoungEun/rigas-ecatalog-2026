@@ -99,7 +99,22 @@ function ChromatogramAndComponents() {
   );
 }
 
-export default function To14a() {
+export default function To14a({ tab = "features" }) {
+  const tabs = [
+    {
+      key: "features",
+      to: "product/rigas-one/to-14a",
+      label: "Special features",
+      content: <FeatureList />,
+    },
+    {
+      key: "chromatogram",
+      to: "product/rigas-one/to-14a-chromatogram",
+      label: "Chromatogram & Components",
+      content: <ChromatogramAndComponents />,
+    },
+  ];
+
   return (
     <CatalogPage pageInfo={pageInfo} className="page-wrapper product-detail rigas-one-series to14a">
       <div className="bg">
@@ -125,16 +140,7 @@ export default function To14a() {
         </div>
 
         <Anime anime="fadeUp" delay={0.5} className="product-detail-body">
-          <Tabs
-            tabs={[
-              { key: "features", label: "Special features", content: <FeatureList /> },
-              {
-                key: "chromatogram",
-                label: "Chromatogram & Components",
-                content: <ChromatogramAndComponents />,
-              },
-            ]}
-          />
+          <Tabs defaultActive={tab} tabs={tabs} />
         </Anime>
       </div>
     </CatalogPage>

@@ -287,7 +287,33 @@ const mixtureNotes = [
   "Urel. : relative expanded uncertainty",
 ];
 
-export default function OdorStandards() {
+export default function OdorStandards({ tab = "components" }) {
+  const tabs = [
+    {
+      key: "components",
+      to: "product/standard-gas/odor-standards",
+      label: "Components",
+      scrollable: true,
+      content: (
+        <GroupedSpecTable groups={componentGroups} colWidths={componentColWidths} />
+      ),
+    },
+    {
+      key: "mixture",
+      to: "product/standard-gas/odor-standards-mixture",
+      label: "Mixture Example",
+      content: (
+        <RangeSpecTable
+          groups={mixtureGroups}
+          subHeaders={mixtureSubHeaders}
+          rows={mixtureRows}
+          notes={mixtureNotes}
+          colWidths={mixtureColWidths}
+        />
+      ),
+    },
+  ];
+
   return (
     <CatalogPage pageInfo={pageInfo} className="page-wrapper product-detail odor-standards">
       <div className="bg">
@@ -313,31 +339,7 @@ export default function OdorStandards() {
         </div>
 
         <Anime anime="fadeUp" delay={0.5} className="product-detail-body">
-          <Tabs
-            tabs={[
-              {
-                key: "components",
-                label: "Components",
-                scrollable: true,
-                content: (
-                  <GroupedSpecTable groups={componentGroups} colWidths={componentColWidths} />
-                ),
-              },
-              {
-                key: "mixture",
-                label: "Mixture Example",
-                content: (
-                  <RangeSpecTable
-                    groups={mixtureGroups}
-                    subHeaders={mixtureSubHeaders}
-                    rows={mixtureRows}
-                    notes={mixtureNotes}
-                    colWidths={mixtureColWidths}
-                  />
-                ),
-              },
-            ]}
-          />
+          <Tabs defaultActive={tab} tabs={tabs} />
         </Anime>
       </div>
     </CatalogPage>

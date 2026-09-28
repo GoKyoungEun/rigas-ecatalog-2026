@@ -144,7 +144,22 @@ function ChromatogramAndComponents() {
   );
 }
 
-export default function Pams57() {
+export default function Pams57({ tab = "features" }) {
+  const tabs = [
+    {
+      key: "features",
+      to: "product/rigas-one/pams",
+      label: "Special features",
+      content: <FeatureList />,
+    },
+    {
+      key: "chromatogram",
+      to: "product/rigas-one/pams-chromatogram",
+      label: "Chromatogram & Components",
+      content: <ChromatogramAndComponents />,
+    },
+  ];
+
   return (
     <CatalogPage
       pageInfo={pageInfo}
@@ -177,16 +192,7 @@ export default function Pams57() {
         </div>
 
         <Anime anime="fadeUp" delay={0.5} className="product-detail-body">
-          <Tabs
-            tabs={[
-              { key: "features", label: "Special features", content: <FeatureList /> },
-              {
-                key: "chromatogram",
-                label: "Chromatogram & Components",
-                content: <ChromatogramAndComponents />,
-              },
-            ]}
-          />
+          <Tabs defaultActive={tab} tabs={tabs} />
         </Anime>
       </div>
     </CatalogPage>

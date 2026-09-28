@@ -142,7 +142,17 @@ function OtherInformation() {
   );
 }
 
-export default function Regulator() {
+export default function Regulator({ tab = "overview" }) {
+  const tabs = [
+    { key: "overview", to: "product/regulator", label: "Overview", content: <Overview /> },
+    {
+      key: "other-information",
+      to: "product/regulator-other-information",
+      label: "Other Information",
+      content: <OtherInformation />,
+    },
+  ];
+
   return (
     <CatalogPage pageInfo={pageInfo} className="page-wrapper product-detail regulator">
       <div className="bg">
@@ -171,16 +181,7 @@ export default function Regulator() {
         </div>
 
         <Anime anime="fadeUp" delay={0.5} className="product-detail-body">
-          <Tabs
-            tabs={[
-              { key: "overview", label: "Overview", content: <Overview /> },
-              {
-                key: "other-information",
-                label: "Other Information",
-                content: <OtherInformation />,
-              },
-            ]}
-          />
+          <Tabs defaultActive={tab} tabs={tabs} />
         </Anime>
       </div>
     </CatalogPage>

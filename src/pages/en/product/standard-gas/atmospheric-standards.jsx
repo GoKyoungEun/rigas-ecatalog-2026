@@ -117,7 +117,30 @@ const mixtureNotes = [
   "Urel. : relative expanded uncertainty",
 ];
 
-export default function AtmosphericStandards() {
+export default function AtmosphericStandards({ tab = "components" }) {
+  const tabs = [
+    {
+      key: "components",
+      to: "product/standard-gas/atmospheric-standards",
+      label: "Components",
+      content: <SpecTable items={components} />,
+    },
+    {
+      key: "mixture",
+      to: "product/standard-gas/atmospheric-standards-mixture",
+      label: "Mixture Example",
+      content: (
+        <RangeSpecTable
+          groups={mixtureGroups}
+          subHeaders={mixtureSubHeaders}
+          rows={mixtureRows}
+          notes={mixtureNotes}
+          colWidths={mixtureColWidths}
+        />
+      ),
+    },
+  ];
+
   return (
     <CatalogPage pageInfo={pageInfo} className="page-wrapper product-detail atmospheric-standards">
       <div className="bg">
@@ -149,24 +172,7 @@ export default function AtmosphericStandards() {
         </div>
 
         <Anime anime="fadeUp" delay={0.5} className="product-detail-body">
-          <Tabs
-            tabs={[
-              { key: "components", label: "Components", content: <SpecTable items={components} /> },
-              {
-                key: "mixture",
-                label: "Mixture Example",
-                content: (
-                  <RangeSpecTable
-                    groups={mixtureGroups}
-                    subHeaders={mixtureSubHeaders}
-                    rows={mixtureRows}
-                    notes={mixtureNotes}
-                    colWidths={mixtureColWidths}
-                  />
-                ),
-              },
-            ]}
-          />
+          <Tabs defaultActive={tab} tabs={tabs} />
         </Anime>
       </div>
     </CatalogPage>

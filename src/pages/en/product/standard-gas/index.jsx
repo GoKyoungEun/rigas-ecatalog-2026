@@ -10,11 +10,24 @@ export default function ProductStandardGas() {
     <div className="contents-wrap">
       <Sluger
         routes={[
-          { path: "atmospheric-standards", element: <AtmosphericStandards /> },
+          { path: "atmospheric-standards", element: <AtmosphericStandards key="components" /> },
+          {
+            path: "atmospheric-standards-mixture",
+            element: <AtmosphericStandards key="mixture" tab="mixture" />,
+          },
           { path: "automobile-exhaust-standards", element: <AutomobileExhaustStandards /> },
-          { path: "petrochemical-natural-gas-standards", element: <PetrochemicalNaturalGasStandards /> },
-          { path: "odor-standards", element: <OdorStandards /> },
-          { path: "voc-standards", element: <VocStandards /> },
+          {
+            path: "petrochemical-natural-gas-standards",
+            element: <PetrochemicalNaturalGasStandards key="components" />,
+          },
+          {
+            path: "petrochemical-natural-gas-standards-mixture",
+            element: <PetrochemicalNaturalGasStandards key="mixture" tab="mixture" />,
+          },
+          { path: "odor-standards", element: <OdorStandards key="components" /> },
+          { path: "odor-standards-mixture", element: <OdorStandards key="mixture" tab="mixture" /> },
+          { path: "voc-standards", element: <VocStandards key="components" /> },
+          { path: "voc-standards-mixture", element: <VocStandards key="mixture" tab="mixture" /> },
         ]}
         slug="pageSlug3"
       />

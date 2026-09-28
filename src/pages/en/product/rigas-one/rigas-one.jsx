@@ -39,7 +39,23 @@ const reactiveRows = [
   ["Oxygen", "12 ~ 18", "cmol/mol"],
 ];
 
-export default function RigasOne() {
+export default function RigasOne({ tab = "non-reactive" }) {
+  const tabs = [
+    {
+      key: "non-reactive",
+      to: "product/rigas-one/rigas-one",
+      label: "Non-reactive gas",
+      content: <RangeSpecTable groups={tableGroups} rows={nonReactiveRows} />,
+    },
+    {
+      key: "reactive",
+      to: "product/rigas-one/rigas-one-reactive",
+      label: "Reactive gas",
+      scrollable: true,
+      content: <RangeSpecTable groups={tableGroups} rows={reactiveRows} />,
+    },
+  ];
+
   return (
     <CatalogPage pageInfo={pageInfo} className="page-wrapper product-detail rigas-one">
       <div className="bg">
@@ -61,21 +77,7 @@ export default function RigasOne() {
         </div>
 
         <Anime anime="fadeUp" delay={0.5} className="product-detail-body">
-          <Tabs
-            tabs={[
-              {
-                key: "non-reactive",
-                label: "Non-reactive gas",
-                content: <RangeSpecTable groups={tableGroups} rows={nonReactiveRows} />,
-              },
-              {
-                key: "reactive",
-                label: "Reactive gas",
-                scrollable: true,
-                content: <RangeSpecTable groups={tableGroups} rows={reactiveRows} />,
-              },
-            ]}
-          />
+          <Tabs defaultActive={tab} tabs={tabs} />
         </Anime>
       </div>
     </CatalogPage>

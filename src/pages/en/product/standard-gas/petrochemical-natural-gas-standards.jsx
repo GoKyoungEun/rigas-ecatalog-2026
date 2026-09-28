@@ -256,7 +256,32 @@ const mixtureNotes = [
   "Urel. : relative expanded uncertainty",
 ];
 
-export default function PetrochemicalNaturalGasStandards() {
+export default function PetrochemicalNaturalGasStandards({ tab = "components" }) {
+  const tabs = [
+    {
+      key: "components",
+      to: "product/standard-gas/petrochemical-natural-gas-standards",
+      label: "Components",
+      scrollable: true,
+      content: <SpecTable items={components} />,
+    },
+    {
+      key: "mixture",
+      to: "product/standard-gas/petrochemical-natural-gas-standards-mixture",
+      label: "Mixture Example",
+      scrollable: true,
+      content: (
+        <RangeSpecTable
+          groups={mixtureGroups}
+          subHeaders={mixtureSubHeaders}
+          rows={mixtureRows}
+          notes={mixtureNotes}
+          colWidths={mixtureColWidths}
+        />
+      ),
+    },
+  ];
+
   return (
     <CatalogPage
       pageInfo={pageInfo}
@@ -290,30 +315,7 @@ export default function PetrochemicalNaturalGasStandards() {
         </div>
 
         <Anime anime="fadeUp" delay={0.5} className="product-detail-body">
-          <Tabs
-            tabs={[
-              {
-                key: "components",
-                label: "Components",
-                scrollable: true,
-                content: <SpecTable items={components} />,
-              },
-              {
-                key: "mixture",
-                label: "Mixture Example",
-                scrollable: true,
-                content: (
-                  <RangeSpecTable
-                    groups={mixtureGroups}
-                    subHeaders={mixtureSubHeaders}
-                    rows={mixtureRows}
-                    notes={mixtureNotes}
-                    colWidths={mixtureColWidths}
-                  />
-                ),
-              },
-            ]}
-          />
+          <Tabs defaultActive={tab} tabs={tabs} />
         </Anime>
       </div>
     </CatalogPage>

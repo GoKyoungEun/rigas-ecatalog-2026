@@ -1,6 +1,8 @@
 import { useState, useRef, useEffect, useCallback } from "react";
+import { useCatalog } from "catalog/Catalog.context";
 
 export default function Tabs({ tabs, defaultActive, className }) {
+  const catalog = useCatalog();
   const [active, setActive] = useState(defaultActive || tabs[0]?.key);
   const activeTab = tabs.find((tab) => tab.key === active);
   const scrollable = !!activeTab?.scrollable;
@@ -74,7 +76,7 @@ export default function Tabs({ tabs, defaultActive, className }) {
             key={tab.key}
             type="button"
             className={`tabs-nav-btn${tab.key === active ? " is-active" : ""}`}
-            onClick={() => setActive(tab.key)}
+            onClick={() => (tab.to ? catalog?.paging("default", tab.to) : setActive(tab.key))}
           >
             {tab.label}
           </button>

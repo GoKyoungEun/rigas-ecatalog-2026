@@ -21,7 +21,11 @@ export default function Product() {
           { path: "standard-gas", element: <ProductStandardGas /> },
           { path: "mixed-gas", element: <ProductMixedGas /> },
           { path: "rigas-one", element: <ProductRigasOne /> },
-          { path: "regulator", element: <ProductRegulator /> },
+          { path: "regulator", element: <ProductRegulator key="overview" /> },
+          {
+            path: "regulator-other-information",
+            element: <ProductRegulator key="other-information" tab="other-information" />,
+          },
         ]}
         slug="pageSlug2"
       />
