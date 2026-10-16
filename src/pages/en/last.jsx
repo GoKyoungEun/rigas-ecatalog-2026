@@ -9,7 +9,7 @@ const pageInfo = {
 const contacts = [
   {
     type: "Domestic",
-    tel: "+82-42-5031-6962",
+    tel: "+82-42-934-6900",
     fax: "+82-42-935-8814",
     email: "master@rigas.co.kr",
   },
