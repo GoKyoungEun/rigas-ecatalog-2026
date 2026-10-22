@@ -645,7 +645,7 @@ body {
     margin-top: 32px;
   }
 }
-.atmospheric-standards .product-detail-visual {right: 135px; bottom: 170px; width: 532px;}
+.atmospheric-standards .product-detail-visual {right: 232px; bottom: 108px; width: 384px;}
 
 .atmospheric-standards .spec-table--range,
 .automobile-exhaust-standards .spec-table--range,
@@ -699,10 +699,10 @@ body {
 .automobile-exhaust-standards.product-detail .page-head {gap: 22px;}
 .automobile-exhaust-standards .product-detail-body {margin-top: 56px;}
 
-.automobile-exhaust-standards .product-detail-visual {right: 175px; bottom: 108px; width: 448px;}
+.automobile-exhaust-standards .product-detail-visual {right: 241px; bottom: 120px; width: 323px;}
 
 /* Petrochemical and Natural Gas Standards */
-.petrochemical-natural-gas-standards .product-detail-visual {right: 260px; bottom: 95px; width: 450px;}
+.petrochemical-natural-gas-standards .product-detail-visual {right: 259px; bottom: 77px; width: 291px;}
 .petrochemical-natural-gas-standards .product-detail-body {margin-top: 70px;}
 
 /* Odor Standards */
@@ -711,13 +711,13 @@ body {
 .odor-standards .product-detail-body {margin-top: 70px;}
 
 /* Volatile Organic Compound Standards */
-.voc-standards .product-detail-visual {right: 125px; bottom: 135px; width: 551px;}
+.voc-standards .product-detail-visual {right: 189px; bottom: 130px; width: 386px;}
 .voc-standards .product-detail-body {margin-top: 60px;}
 
 /* Laser Gas Mixtures */
 .laser-gas-mixtures.product-detail .page-head {gap: 22px;}
 .laser-gas-mixtures .category-list {border-top: 2px solid var(--primary); padding-top: 15px;}
-.laser-gas-mixtures .product-detail-visual {right: 135px; bottom: 135px; width: 532px;}
+.laser-gas-mixtures .product-detail-visual {right: 232px; bottom: 108px; width: 384px;}
 .laser-gas-mixtures .product-detail-body {margin-top: 60px;}
 .laser-gas-mixtures .tabs-nav-btn {cursor: default;}
 .laser-gas-mixtures .tabs-panel--scroll { max-height: 320px;}
