@@ -159,10 +159,6 @@ export default function Regulator({ tab = "overview" }) {
         <Image src="product/regulator-bg.jpg" alt="" />
       </div>
 
-      <Anime anime="fadeRight" delay={0.3} className="product-detail-visual">
-        <Image src="product/regulator-img.png" alt="RIGAS calibration gas regulator" />
-      </Anime>
-
       <div className="wrap">
         <div className="page-head">
           <Anime anime="fadeUp" delay={0.15} className="page-head-title">
@@ -179,6 +175,10 @@ export default function Regulator({ tab = "overview" }) {
             </p>
           </Anime>
         </div>
+
+        <Anime anime="fadeRight" delay={0.3} className="product-detail-visual">
+          <Image src="product/regulator-img.png" alt="RIGAS calibration gas regulator" />
+        </Anime>
 
         <Anime anime="fadeUp" delay={0.5} className="product-detail-body">
           <Tabs defaultActive={tab} tabs={tabs} />

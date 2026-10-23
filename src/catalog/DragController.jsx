@@ -1,56 +1,62 @@
-import { useState, useEffect } from "react";
+import { useEffect, useRef } from "react";
 import { useCatalog } from "./Catalog.context";
+
+function isInsideHorizontalScroller(target) {
+  for (let element = target; element && element !== document.body; element = element.parentElement) {
+    const overflowX = window.getComputedStyle(element).overflowX;
+    if (
+      (overflowX === "auto" || overflowX === "scroll") &&
+      element.scrollWidth > element.clientWidth
+    ) {
+      return true;
+    }
+  }
+  return false;
+}
 
 export default function DragController({ swipeThreshold = 50, verticalThreshold = 30 }) {
   const { paging } = useCatalog();
-
-  const [startX, setStartX] = useState(null);
-  const [endX, setEndX] = useState(null);
-  const [startY, setStartY] = useState(null);
-  const [endY, setEndY] = useState(null);
+  const gesture = useRef(null);
 
   useEffect(() => {
     const handleTouchStart = (e) => {
-      if (e.target.closest(".drag-prevent")) return;
-      setStartX(e.touches[0].clientX);
-      setStartY(e.touches[0].clientY);
+      gesture.current = null;
+      if (e.touches.length !== 1 || !(e.target instanceof Element)) return;
+      if (e.target.closest(".drag-prevent") || isInsideHorizontalScroller(e.target)) return;
+
+      gesture.current = {
+        x: e.touches[0].clientX,
+        y: e.touches[0].clientY,
+      };
     };
 
-    const handleTouchMove = (e) => {
-      if (e.target.closest(".drag-prevent")) return;
-      setEndX(e.touches[0].clientX);
-      setEndY(e.touches[0].clientY);
+    const handleTouchEnd = (e) => {
+      const start = gesture.current;
+      gesture.current = null;
+      if (!start || e.changedTouches.length !== 1) return;
+
+      const horizontalDistance = start.x - e.changedTouches[0].clientX;
+      const verticalDistance = start.y - e.changedTouches[0].clientY;
+
+      if (Math.abs(verticalDistance) >= verticalThreshold) return;
+      if (horizontalDistance > swipeThreshold) paging("next");
+      else if (horizontalDistance < -swipeThreshold) paging("prev");
     };
 
-    const handleTouchEnd = () => {
-      if (startX !== null && endX !== null && startY !== null && endY !== null) {
-        const horizontalDistance = startX - endX;
-        const verticalDistance = startY - endY;
-
-        if (Math.abs(verticalDistance) < verticalThreshold) {
-          if (horizontalDistance > swipeThreshold) {
-            paging("next");
-          } else if (horizontalDistance < -swipeThreshold) {
-            paging("prev");
-          }
-        }
-      }
-      setStartX(null);
-      setEndX(null);
-      setStartY(null);
-      setEndY(null);
+    const handleTouchCancel = () => {
+      gesture.current = null;
     };
 
     document.body.addEventListener("touchstart", handleTouchStart);
-    document.body.addEventListener("touchmove", handleTouchMove);
     document.body.addEventListener("touchend", handleTouchEnd);
+    document.body.addEventListener("touchcancel", handleTouchCancel);
 
     return () => {
       document.body.removeEventListener("touchstart", handleTouchStart);
-      document.body.removeEventListener("touchmove", handleTouchMove);
       document.body.removeEventListener("touchend", handleTouchEnd);
+      document.body.removeEventListener("touchcancel", handleTouchCancel);
     };
-  }, [startX, endX, startY, endY, paging]);
+  }, [paging, swipeThreshold, verticalThreshold]);
 
   return null;
 }

@@ -46,10 +46,6 @@ export default function LaserGasMixtures() {
       <div className="bg">
         <Image src="product/mixed-gas-bg1.jpg" alt="" />
       </div>
-      <Anime anime="fadeRight" delay={0.3} className="product-detail-visual">
-        <Image src="product/mixed-gas-img1.png" alt="" />
-      </Anime>
-
       <div className="wrap">
         <div className="page-head">
           <Anime anime="fadeUp" delay={0.15} className="page-head-title">
@@ -63,6 +59,10 @@ export default function LaserGasMixtures() {
             </p>
           </Anime>
         </div>
+
+        <Anime anime="fadeRight" delay={0.3} className="product-detail-visual">
+          <Image src="product/mixed-gas-img1.png" alt="" />
+        </Anime>
 
         <Anime anime="fadeUp" delay={0.5} className="product-detail-body">
           <div className="spec-section">

@@ -61,10 +61,6 @@ export default function RigasOne({ tab = "non-reactive" }) {
       <div className="bg">
         <Image src="product/rigas-one-bg.jpg" alt="" />
       </div>
-      <Anime anime="fadeRight" delay={0.3} className="product-detail-visual">
-        <Image src="product/rigas-one-img.png" alt="" />
-      </Anime>
-
       <div className="wrap">
         <div className="page-head">
           <Anime anime="fadeUp" delay={0.15} className="page-head-title">
@@ -75,6 +71,10 @@ export default function RigasOne({ tab = "non-reactive" }) {
             <p>RIGAS 1L standard gas with refillable and high-pressure cylinders.</p>
           </Anime>
         </div>
+
+        <Anime anime="fadeRight" delay={0.3} className="product-detail-visual">
+          <Image src="product/rigas-one-img.png" alt="" />
+        </Anime>
 
         <Anime anime="fadeUp" delay={0.5} className="product-detail-body">
           <Tabs defaultActive={tab} tabs={tabs} />

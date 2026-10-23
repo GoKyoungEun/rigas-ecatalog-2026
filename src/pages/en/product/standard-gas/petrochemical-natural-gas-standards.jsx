@@ -290,10 +290,6 @@ export default function PetrochemicalNaturalGasStandards({ tab = "components" })
       <div className="bg">
         <Image src="product/standard-gas-bg3.jpg" alt="" />
       </div>
-      <Anime anime="fadeRight" delay={0.3} className="product-detail-visual">
-        <Image src="product/standard-gas-img3.png" alt="" />
-      </Anime>
-
       <div className="wrap">
         <div className="page-head">
           <Anime anime="fadeUp" delay={0.15} className="page-head-title">
@@ -313,6 +309,10 @@ export default function PetrochemicalNaturalGasStandards({ tab = "components" })
             </p>
           </Anime>
         </div>
+
+        <Anime anime="fadeRight" delay={0.3} className="product-detail-visual">
+          <Image src="product/standard-gas-img3.png" alt="" />
+        </Anime>
 
         <Anime anime="fadeUp" delay={0.5} className="product-detail-body">
           <Tabs defaultActive={tab} tabs={tabs} />

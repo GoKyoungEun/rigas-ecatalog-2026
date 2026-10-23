@@ -63,7 +63,7 @@ body {
 .rigas-header-wrap {position: absolute; top: 0; left: 0; z-index: 9999; width: 100%;}
 .rigas-header {position: relative; z-index: 2; width: 100%; height: 80px; padding-inline: 34px; display: flex; align-items: center; justify-content: space-between; background-color: rgba(0, 0, 0, 0.45); -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); transition: background-color 0.3s ease, backdrop-filter 0.3s ease;}
 .rigas-header-logo {display: flex; align-items: center; flex-shrink: 0;}
-.rigas-header-logo img {width: 180px; height: auto;}
+.rigas-header-logo img {width: 120px; height: auto;}
 .rigas-header-nav {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); display: flex; align-items: center; gap: 60px;}
 .rigas-header-nav-label {font-size: 20px; font-weight: 700; line-height: 1; color: rgba(255, 255, 255, 0.45); text-transform: uppercase; letter-spacing: 0.02em; transition: color 0.3s ease; cursor: pointer;}
 .rigas-header-nav-label:hover {color: #fff;}
@@ -108,7 +108,7 @@ body {
 @media screen and (max-width: 767px) {
   .rigas-header-wrap {position: fixed;}
   .rigas-header {height: 60px; padding-inline: 20px;}
-  .rigas-header-logo img {width: 130px;}
+  .rigas-header-logo img {width: 110px;}
   .rigas-header-nav {display: none;}
   .rigas-header-submenu {display: none;}
   .rigas-header-menu {width: 60px; height: 60px;}
@@ -131,6 +131,7 @@ body {
 /* intro */
 .intro {position: relative; overflow: hidden;}
 .intro-logo.pcView {position: absolute; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; z-index: 4; pointer-events: none;}
+.intro-logo.pcView img {transform: translate(2.5px, -18px);} /* intro-bg.svg 구멍 위치에 맞춤 */
 .intro-bg.pcView {position: absolute; width: 100%; height: 100%; display: flex; justify-content: center; align-items: center; z-index: 3;}
 .intro-logo.moView {display: none;}
 .intro-title {position: absolute; left: 50%; top: 50%; transform: translate(-50%, -50%); width: 865px; height: 115px; z-index: 2; -webkit-mask-size: 100% 100%; mask-size: 100% 100%; -webkit-mask-repeat: no-repeat; mask-repeat: no-repeat; -webkit-mask-position: center; mask-position: center; overflow: hidden; pointer-events: none; -webkit-backdrop-filter: blur(12px); backdrop-filter: blur(12px); background-color: rgba(255, 255, 255, .4);}

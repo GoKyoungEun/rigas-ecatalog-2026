@@ -169,13 +169,6 @@ export default function Pams57({ tab = "features" }) {
         <Image src="product/rigas-one-bg2.jpg" alt="" />
       </div>
 
-      <Anime anime="fadeRight" delay={0.3} className="product-detail-visual">
-        <Image
-          src="product/rigas-one-img2.png"
-          alt="Compact silver calibration gas cylinders with regulators"
-        />
-      </Anime>
-
       <div className="wrap">
         <div className="page-head">
           <Anime anime="fadeUp" delay={0.15} className="page-head-title">
@@ -190,6 +183,13 @@ export default function Pams57({ tab = "features" }) {
             </p>
           </Anime>
         </div>
+
+        <Anime anime="fadeRight" delay={0.3} className="product-detail-visual">
+          <Image
+            src="product/rigas-one-img2.png"
+            alt="Compact silver calibration gas cylinders with regulators"
+          />
+        </Anime>
 
         <Anime anime="fadeUp" delay={0.5} className="product-detail-body">
           <Tabs defaultActive={tab} tabs={tabs} />
